@@ -5,10 +5,11 @@ import OurValues from "@/components/OurValues";
 import Products from "@/components/Product";
 import Packaging from "@/components/Packaging";
 import Shipping from "@/components/Shipping";
-import GallerySlider from '@/components/GallerySlider'; 
+import GallerySlider from '@/components/GallerySlider';
 import Testimonials from "@/components/Testimonials";
 import OurTeam from "@/components/OurTeam";
 import Footer from "@/components/Footer";
+import LocationMap from "@/components/LocationMap";
 
 export default function HomePage() {
   return (
@@ -36,7 +37,9 @@ export default function HomePage() {
       <Testimonials />
       <GallerySlider />
       <OurTeam />
+      <LocationMap />
       <Footer />
+
     </main>
   );
 }

@@ -5,7 +5,7 @@ const Packaging: React.FC = () => {
   return (
     <section id="packaging" className="bg-white py-24 sm:py-32">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-16">
+        <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl text-center mb-16">
           Packaging Options
         </h2>
 

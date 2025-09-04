@@ -3,8 +3,8 @@ import StatsBar from './StatsBar';
 
 const Hero: React.FC = () => {
   return (
-    // Container utama ini tetap sama untuk mengatur layout dengan section berikutnya
-    <div className="relative h-screen w-full pb-24 -mb-12">
+    // The main container's height has been changed from h-screen to h-[90vh]
+    <div className="relative h-[90vh] w-full pb-24 -mb-12">
       {/* Background Layers */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -12,10 +12,8 @@ const Hero: React.FC = () => {
       />
       <div className="absolute inset-0 bg-black/70" />
 
-      {/* --- PERUBAHAN DIMULAI DI SINI --- */}
-      {/* Container baru ini khusus untuk memosisikan konten teks di tengah */}
+      {/* Container for centering the text content */}
       <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-4">
-        {/* Konten teks dan tombol dipindahkan ke dalam container ini */}
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-7xl">
             Indo Charcoal
@@ -44,9 +42,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-     
-      
-      
+
       <StatsBar />
     </div>
   );

@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 h-20 transition-colors duration-300 ease-in-out bg-zinc-900/90 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 w-full z-50 h-12 transition-colors duration-300 ease-in-out bg-zinc-900/90 backdrop-blur-sm">
       {/* Use a relative container to position the navigation */}
       <div className="container relative mx-auto flex h-full items-center justify-between px-6">
         {/* Logo will be on the left */}

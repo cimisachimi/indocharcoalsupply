@@ -1,63 +1,82 @@
-"use client"; // This component needs to be a Client Component because it uses state for the carousel.
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import { motion } from 'framer-motion';
 
-// Defines the structure for a product specification item
+// --- Defines the structure for a product specification item ---
 interface SpecificationItem {
   label: string;
   value: string;
 }
 
-// Defines the structure for a product
+// --- Defines the structure for a single image with its shape name ---
+interface ProductImage {
+  src: string;
+  shape: string;
+}
+
+// --- Defines the structure for a product ---
 interface Product {
   id: string;
   type: string;
-  images: string[]; // Array of image paths for the carousel
+  images: ProductImage[]; // Now an array of objects
   specifications: SpecificationItem[];
 }
 
-// ProductCard component to display individual product details
+// --- ProductCard component with shape names on images ---
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const goToPrevious = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
-    );
-  };
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
-  const goToNext = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+    emblaApi.on('select', onSelect);
+    return () => { emblaApi.off('select', onSelect) };
+  }, [emblaApi]);
 
   return (
-    // --- PENYEMPURNAAN VISUAL ---
-    // Efek hover untuk mengangkat kartu dan memperkuat bayangan.
-    <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col p-6 border border-gray-100 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1">
+    <motion.div
+      className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col p-6 border border-gray-100 h-full"
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+      }}
+    >
       <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">{product.type}</h3>
 
-      {/* --- PENYEMPURNAAN VISUAL --- */}
-      {/* Menggunakan aspect-square agar area gambar selalu konsisten */}
-      <div className="relative w-full aspect-square flex items-center justify-center">
-        {/* Carousel Image */}
-        <Image
-          src={product.images[currentImageIndex]}
-          alt={`${product.type} image ${currentImageIndex + 1}`}
-          fill // Gunakan fill agar gambar mengisi container
-          style={{ objectFit: 'contain' }}
-          className="p-4" // Beri sedikit padding agar gambar tidak menempel di tepi
-        />
+      <div className="overflow-hidden relative" ref={emblaRef}>
+        <div className="flex">
+          {product.images.map((image, index) => (
+            <div className="relative flex-[0_0_100%] aspect-square" key={index}>
+              {/* Shape Name Overlay */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-black/50 text-white text-sm font-semibold px-3 py-1 rounded-full">
+                {image.shape}
+              </div>
+              <Image
+                src={image.src}
+                alt={`${product.type} - ${image.shape}`}
+                fill
+                style={{ objectFit: 'contain' }}
+                className="p-4"
+              />
+            </div>
+          ))}
+        </div>
 
-        {/* Carousel Navigation Arrows */}
+        {/* --- Carousel Navigation Arrows --- */}
         {product.images.length > 1 && (
           <>
-            {/* --- PENYEMPURNAAN VISUAL --- */}
-            {/* Tombol diberi background lingkaran semi-transparan */}
             <button
-              onClick={goToPrevious}
+              onClick={scrollPrev}
               className="absolute left-2 top-1/2 -translate-y-1/2 z-10 grid h-10 w-10 place-content-center rounded-full bg-white/60 text-gray-600 backdrop-blur-sm transition-all hover:bg-white hover:text-gray-900"
               aria-label="Previous image"
             >
@@ -66,7 +85,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
               </svg>
             </button>
             <button
-              onClick={goToNext}
+              onClick={scrollNext}
               className="absolute right-2 top-1/2 -translate-y-1/2 z-10 grid h-10 w-10 place-content-center rounded-full bg-white/60 text-gray-600 backdrop-blur-sm transition-all hover:bg-white hover:text-gray-900"
               aria-label="Next image"
             >
@@ -78,30 +97,25 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         )}
       </div>
 
-      {/* Carousel Dots Indicator */}
+      {/* --- Carousel Dots Indicator --- */}
       {product.images.length > 1 && (
         <div className="flex justify-center space-x-2 my-4 z-10">
           {product.images.map((_, idx) => (
             <button
               key={idx}
-              className={`block h-2 w-2 rounded-full cursor-pointer transition-colors duration-300 ${idx === currentImageIndex ? 'bg-gray-800' : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              onClick={() => setCurrentImageIndex(idx)}
-              aria-current={idx === currentImageIndex ? 'true' : 'false'}
+              className={`block h-2 w-2 rounded-full cursor-pointer transition-colors duration-300 ${idx === selectedIndex ? 'bg-gray-800' : 'bg-gray-300 hover:bg-gray-400'}`}
+              onClick={() => scrollTo(idx)}
+              aria-current={idx === selectedIndex ? 'true' : 'false'}
               aria-label={`Go to image ${idx + 1}`}
             />
           ))}
         </div>
       )}
-      
-      {/* --- PENYEMPURNAAN VISUAL --- */}
-      {/* Diberi garis pemisah atas */}
+
       <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col flex-grow">
         <h4 className="text-sm font-bold text-gray-500 mb-3 tracking-wider text-left">SPECIFICATIONS</h4>
         <ul className="space-y-0 text-gray-700">
           {product.specifications.map((spec, index) => (
-            // --- PENYEMPURNAAN VISUAL ---
-            // Setiap item diberi garis pemisah bawah untuk keterbacaan
             <li key={index} className="flex justify-between items-center text-sm py-3 border-b border-gray-100 last:border-b-0">
               <span className="font-medium text-gray-600 uppercase">{spec.label}</span>
               <span className="font-semibold">{spec.value}</span>
@@ -109,17 +123,23 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-// Main Products component
+// --- Main Products component with updated data structure ---
 const Products: React.FC = () => {
   const products: Product[] = [
     {
       id: 'shisha-briquette',
       type: 'Briquette for Shisha',
-      images: ['/coal-shape/cube.webp', '/coal-shape/cube-high-temperature.webp', '/coal-shape/cloud.webp', '/coal-shape/flat.webp', '/coal-shape/cube-high-flow.webp'],
+      images: [
+        { src: '/coal-shape/cube.webp', shape: 'Cube' },
+        { src: '/coal-shape/cube-high-temperature.webp', shape: 'High Temperature' },
+        { src: '/coal-shape/cloud.webp', shape: 'Cloud' },
+        { src: '/coal-shape/flat.webp', shape: 'Flat' },
+        { src: '/coal-shape/cube-high-flow.webp', shape: 'High Flow' }
+      ],
       specifications: [
         { label: 'Ash Content', value: '2,0% - 2,5%' },
         { label: 'Burning Time', value: '2 - 2,5 HOURS' },
@@ -131,7 +151,12 @@ const Products: React.FC = () => {
     {
       id: 'bbq-briquette',
       type: 'Briquette for BBQ',
-      images: ['/coal-shape/octa.webp', '/coal-shape/dome.webp', '/coal-shape/hexa.webp', '/coal-shape/finger.webp'],
+      images: [
+        { src: '/coal-shape/octa.webp', shape: 'Octagonal' },
+        { src: '/coal-shape/dome.webp', shape: 'Dome' },
+        { src: '/coal-shape/hexa.webp', shape: 'Hexagonal' },
+        { src: '/coal-shape/finger.webp', shape: 'Finger' }
+      ],
       specifications: [
         { label: 'Ash Content', value: '7% - 8%' },
         { label: 'Burning Time', value: '5 - 6 HOURS' },
@@ -142,32 +167,54 @@ const Products: React.FC = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
-    <section className="bg-gray-50 py-24 sm:py-32">
+    <section id="product" className="bg-gray-50 py-24 sm:py-32">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl mb-12">
+        <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl lg:text-5xl mb-12">
           Our Products
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-        </div>
+        </motion.div>
 
-        {/* --- PENYEMPURNAAN VISUAL --- */}
-        {/* Banner CTA yang sudah diperbaiki */}
-        <div className="
-          mt-20
-          w-full max-w-4xl mx-auto
-          text-white rounded-[50px] shadow-lg
-          bg-brand-orange
-          px-6 py-8 sm:px-10 md:px-16 md:py-10
-          text-center text-xl font-extrabold leading-relaxed
-          sm:text-2xl lg:text-3xl
-          transition-all duration-300 ease-in-out
-          hover:shadow-2xl hover:scale-[1.02]
-        ">
-          PARTNER WITH US TO CREATE CUSTOM BRIQUETTES SHAPES AND SIZES THAT REFLECT YOUR BRAND IDENTITY, INSIDE AND OUT.
+        <div className="mt-24 w-full max-w-5xl mx-auto">
+          <div className="bg-zinc-800 rounded-xl shadow-lg p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-white text-center md:text-left">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-2">
+                  Need a Custom Shape?
+                </h3>
+                <p className="text-white/80 max-w-lg">
+                  Partner with us to design custom briquette shapes and sizes that reflect your brand identity, inside and out.
+                </p>
+              </div>
+              <div className="flex-shrink-0 mt-4 md:mt-0">
+                <a
+                  href="#contact"
+                  className="inline-block bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
