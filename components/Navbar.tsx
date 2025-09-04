@@ -7,24 +7,25 @@ import NavLink from './ui/Navlink';
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
 
-  // An array of nav links to avoid repetition
+  // An array of nav links with updated href for scrolling
   const navLinks = [
-    { href: '#', label: 'Home' },
-    { href: '#', label: 'Product' },
-    { href: '#', label: 'Our Values' },
-    { href: '#', label: 'Product Profile' },
-    { href: '#', label: 'Packaging' },
-    { href: '#', label: 'Shipping' },
+    { href: '#home', label: 'Home' },
+    { href: '#product', label: 'Product' },
+    { href: '#our-values', label: 'Our Values' },
+    { href: '#product-profile', label: 'Product Profile' },
+    { href: '#packaging', label: 'Packaging' },
+    { href: '#shipping', label: 'Shipping' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 transition-colors duration-300 ease-in-out bg-zinc-900/90 backdrop-blur-sm">
-      {/* Centered Container for Navbar Content */}
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 left-0 w-full z-50 h-20 transition-colors duration-300 ease-in-out bg-zinc-900/90 backdrop-blur-sm">
+      {/* Use a relative container to position the navigation */}
+      <div className="container relative mx-auto flex h-full items-center justify-between px-6">
+        {/* Logo will be on the left */}
         <Logo />
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex">
+        {/* Centered Desktop Navigation using absolute positioning */}
+        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex">
           <ul className="flex items-center space-x-8 font-medium">
             {navLinks.map((link) => (
               <NavLink key={link.label} href={link.href}>
@@ -34,7 +35,7 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button will be on the right */}
         <div className="lg:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white" aria-label="Toggle menu">
             {isMenuOpen ? (
@@ -52,7 +53,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown (no changes needed here) */}
       {isMenuOpen && (
         <nav className="lg:hidden bg-zinc-900/95 pb-4">
           <ul className="flex flex-col items-center space-y-4">
