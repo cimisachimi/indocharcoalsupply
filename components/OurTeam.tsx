@@ -18,18 +18,18 @@ const OurTeam: React.FC = () => {
   const teamMembers = [
     {
       imageSrc: "/team-image/member1.webp",
-      name: "Your Name",
-      role: "Founder & CEO"
+      name: "ADAM BILLAH HADI WARDOYO ",
+      role: "Chief Executive Officer"
     },
     {
       imageSrc: "/team-image/member2.webp",
-      name: "Team Member Two",
-      role: "Head of Production"
+      name: "AZIZAH NAYANDA FADHILAH ",
+      role: "Chief Financial Officer"
     },
     {
       imageSrc: "/team-image/member3.webp",
-      name: "Team Member Three",
-      role: "Export Manager"
+      name: "WASESA BERLIANTO",
+      role: "Chief Marketing Officer"
     }
   ];
 
