@@ -11,7 +11,8 @@ const TestimonialCard = ({ quote, author, location }: { quote: string, author: s
     <div className="flex mb-4">
       {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
     </div>
-    <p className="text-gray-600 mb-6 flex-grow">"{quote}"</p>
+    {/* This line has been fixed */}
+    <p className="text-gray-600 mb-6 flex-grow">&ldquo;{quote}&rdquo;</p>
     <div>
       <p className="font-bold text-gray-900">{author}</p>
       <p className="text-sm text-gray-500">{location}</p>
