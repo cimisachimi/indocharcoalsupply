@@ -104,7 +104,7 @@ const GallerySlider: React.FC = () => {
           </button>
         </div>
 
-        {/* Indikator Titik */}
+        {/* Indikator Titik t*/}
         <div className="flex justify-center mt-4 gap-2">
           {Array.from({ length: maxSlideIndex + 1 }).map((_, idx) => (
             <button
