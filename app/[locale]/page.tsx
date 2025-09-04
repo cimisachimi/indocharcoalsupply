@@ -11,6 +11,8 @@ import OurTeam from "@/components/OurTeam";
 import Footer from "@/components/Footer";
 import LocationMap from "@/components/LocationMap";
 
+import { useTranslations } from 'next-intl';
+
 export default function HomePage() {
   return (
     <main>

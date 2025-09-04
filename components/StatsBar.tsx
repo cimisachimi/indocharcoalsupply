@@ -1,7 +1,11 @@
 import React from 'react';
-import StatItem from './ui/StatItem'; // Pastikan path ini benar
+import StatItem from './ui/StatItem';
+import { useTranslations } from 'next-intl'
+
 
 const StatsBar: React.FC = () => {
+
+  const t = useTranslations('stat')
   return (
     // Container absolut untuk memposisikan bar di tengah bawah parent-nya
     <div className="absolute bottom-0 left-0 w-full flex justify-center px-4">
@@ -21,7 +25,7 @@ const StatsBar: React.FC = () => {
         sm:gap-8 sm:px-10 sm:py-5
         lg:gap-16 lg:px-16 lg:py-8
       ">
-        <StatItem value="15+" label="Product" />
+        <StatItem value="15+" label={t('product')} />
         <StatItem value="20+" label="Client" />
         <StatItem value="15+" label="Testimonie" />
       </div>

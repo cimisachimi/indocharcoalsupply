@@ -1,7 +1,11 @@
 import React from 'react';
 import StatsBar from './StatsBar';
+import { useTranslations } from 'next-intl'
+
 
 const Hero: React.FC = () => {
+  const t = useTranslations('hero')
+
   return (
     // The main container's height has been changed from h-screen to h-[90vh]
     <div className="relative h-[90vh] w-full pb-24 -mb-12">
@@ -22,10 +26,7 @@ const Hero: React.FC = () => {
             Supply
           </h2>
           <p className="mt-6 max-w-2xl mx-auto text-white/80">
-            The company of Indo charcoal supply was established in 2021 with a strong
-            commitment to providing customers with the best, fastest, and most reliable
-            services. Since its inception, the company has focused on the production
-            and export of high-quality briquettes.
+            {t('paragraph')}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -34,10 +35,10 @@ const Hero: React.FC = () => {
               rel="noopener noreferrer"
               className="bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300"
             >
-              Download Catalogue
+              {t('catalog')}
             </a>
             <button className="border border-white/50 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
-              Contact Us
+              {t('contact')}
             </button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl'
 
 // A single card component for a value
 const ValueCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
@@ -16,16 +17,18 @@ const ValueCard = ({ icon, title, description }: { icon: React.ReactNode, title:
 );
 
 const OurValues: React.FC = () => {
+  const t = useTranslations('values')
+
   const values = [
     {
       icon: <IconIntegrity />,
-      title: 'Integrity',
-      description: 'We are committed to conducting business with honesty, ethics and transparency in every aspect of our operations.',
+      title: t('integrityTitle'),
+      description: t('integrityDescription'),
     },
     {
       icon: <IconQuality />,
-      title: 'Quality',
-      description: 'We always prioritize quality in every product and service we offer to meet and exceed customer expectations.',
+      title: t('qualityTitle'),
+      description: t('integrityDescription'),
     },
     {
       icon: <IconInnovation />,
@@ -50,6 +53,8 @@ const OurValues: React.FC = () => {
   ];
 
   return (
+
+
     <section className="relative bg-zinc-900 text-white py-24 sm:py-32">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-10"

@@ -1,7 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl'
+
+
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
+
+
   // Padding kartu dibuat responsif (p-4 untuk mobile, sm:p-6 untuk desktop)
   <div className="bg-gray-50/80 rounded-2xl p-4 sm:p-6 flex flex-col items-center text-center gap-4 md:flex-row md:items-start md:text-left md:gap-5">
     {/* Ukuran ikon kini juga responsif */}
@@ -20,13 +25,16 @@ const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: str
 );
 
 const VisionMission: React.FC = () => {
+  const t = useTranslations('vision')
+
+
   return (
     // Padding atas yang besar dan responsif tetap dipertahankan untuk mengatasi overlap
     <section className="bg-white pt-32 pb-16 sm:pt-32 sm:pb-24">
       <div className="container mx-auto px-6">
         {/* Penyelarasan item ke atas di desktop ('lg:items-start') dipertahankan */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-16 items-center lg:items-start">
-          
+
           <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[550px] rounded-3xl overflow-hidden shadow-lg">
             <Image
               src="/hookah-charcoal.webp"
@@ -40,17 +48,17 @@ const VisionMission: React.FC = () => {
           <div className="flex flex-col">
             {/* Margin bawah judul dibuat responsif */}
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8 lg:mb-12 text-center lg:text-left">
-              Our Vision and Mission
+              {t('title')}
             </h2>
             <div className="space-y-6">
               <InfoCard icon={<IconTarget />} title="Vision">
-                <p>To be a leading export company that provides high quality and sustainable products, and makes a positive contribution to the global economy.</p>
+                <p>{t('vision')}</p>
               </InfoCard>
               <InfoCard icon={<IconList />} title="Mission">
                 <ul className="list-disc list-outside pl-5 space-y-2 text-left">
-                  <li>Establish long-term relationships with customers and business partners based on trust and mutual satisfaction.</li>
-                  <li>Develop an efficient and reliable international distribution network to meet the needs of the global market.</li>
-                  <li>Enhance employee skills and welfare through continuous training and professional development.</li>
+                  <li>{t("mission1")}</li>
+                  <li>{t("mission2")}</li>
+                  <li>{t("mission3")}</li>
                 </ul>
               </InfoCard>
             </div>

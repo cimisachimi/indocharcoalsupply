@@ -1,7 +1,18 @@
+//NEXT INTERNATIONAL
+import { NextIntlClientProvider, hasLocale } from 'next-intl'
+import { routing } from '@/i18n/routing';
+import { notFound } from 'next/navigation'
+
+//DEFAUL CONFIGURATION
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ContactBubble from "@/components/ContactBubble"; // 1. Import the new component
+
+//COMPONENTS
+import ContactBubble from "@/components/ContactBubble";
+
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,18 +29,29 @@ export const metadata: Metadata = {
   description: "production and export of high-quality briquettes",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <ContactBubble /> {/* 2. Add the component here */}
+        <NextIntlClientProvider>
+          {children}
+          <ContactBubble />
+        </NextIntlClientProvider>
+
       </body>
     </html>
   );

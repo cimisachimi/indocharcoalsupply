@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "catalog": "Download Catalogue",
+    "contact": "Contact Us",
+    "paragraph": "The company of Indo charcoal supply was established in 2021 with a strong commitment to providing customers with the best, fastest, and most reliable services. Since its inception, the company has focused on the production and export of high-quality briquettes."
+  },
+  "stat": {
+    "product": "Product"
+  },
+  "values": {
+    "integrityDescription": "We are committed to conducting business with honesty, ethics and transparency in every aspect of our operations.",
+    "integrityTitle": "Integrity",
+    "qualityDescription": "We always prioritize quality in every product and service we offer to meet and exceed customer expectations.",
+    "qualityTitle": "Quality"
+  },
+  "vision": {
+    "mission1": "Establish long-term relationships with customers and business partners based on trust and mutual satisfaction.",
+    "mission2": "Develop an efficient and reliable international distribution network to meet the needs of the global market.",
+    "mission3": "Enhance employee skills and welfare through continuous training and professional development.",
+    "title": "Our Vision and Mission",
+    "vision": "To be a leading export company that provides high quality and sustainable products, and makes a positive contribution to the global economy."
+  }
+}
