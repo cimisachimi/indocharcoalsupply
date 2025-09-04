@@ -2,14 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
-  <div className="bg-gray-50/80 rounded-2xl p-6 flex items-start gap-5">
-    <div className="flex-shrink-0 h-14 w-14 rounded-full bg-brand-orange/10 flex items-center justify-center">
-      <div className="h-12 w-12 rounded-full bg-brand-orange flex items-center justify-center text-white">
+  // On extra-small screens, stack icon and text. On small screens and up, go side-by-side.
+  <div className="bg-gray-50/80 rounded-2xl p-4 sm:p-6 flex flex-col items-center text-center gap-4 sm:flex-row sm:items-start sm:text-left sm:gap-5">
+    {/* Reduced icon size on mobile */}
+    <div className="flex-shrink-0 h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-brand-orange/10 flex items-center justify-center">
+      <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-brand-orange flex items-center justify-center text-white">
         {icon}
       </div>
     </div>
     <div>
-      <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
+      {/* Reduced title size on mobile */}
+      <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{title}</h3>
       <div className="text-gray-600 space-y-2">{children}</div>
     </div>
   </div>
@@ -20,8 +23,8 @@ const VisionMission: React.FC = () => {
     <section className="bg-white py-24 sm:py-32">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Image Column with responsive height */}
-          <div className="relative h-[400px] lg:h-[550px] w-full rounded-3xl overflow-hidden shadow-lg">
+          {/* Reduced image height on mobile for better balance */}
+          <div className="relative h-[350px] lg:h-[550px] w-full rounded-3xl overflow-hidden shadow-lg">
             <Image
               src="/hookah-charcoal.webp"
               alt="Glowing hookah charcoal in a metal holder"

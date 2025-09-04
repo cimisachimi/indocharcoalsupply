@@ -10,9 +10,8 @@ const Hero: React.FC = () => {
       />
       <div className="absolute inset-0 bg-black/70" />
 
-      {/* The `z-10` class has been removed from this div */}
       <div className="relative flex h-full flex-col">
-        <main className="flex-grow flex flex-col items-center justify-center text-center px-4 pt-20">
+        <main className="flex-grow flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-7xl">
             Indo Charcoal
           </h1>
@@ -26,16 +25,23 @@ const Hero: React.FC = () => {
             and export of high-quality briquettes.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-            <button className="bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300">
+            <a
+              href="https://drive.google.com/file/d/14N-Yzy3S-mlXNmzGgq9b67ZCsbWGCbSa/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300"
+            >
               Download Catalogue
-            </button>
+            </a>
             <button className="border border-white/50 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
               Contact Us
             </button>
           </div>
         </main>
-
       </div>
+
+      {/* The StatsBar is now outside the flex container and will be positioned relative to the Hero */}
+      <StatsBar />
     </div>
   );
 };
