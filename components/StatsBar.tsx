@@ -1,5 +1,5 @@
 import React from 'react';
-import StatItem from './StatItem';
+import StatItem from './ui/StatItem';
 
 const StatsBar: React.FC = () => {
   return (

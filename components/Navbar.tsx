@@ -1,8 +1,8 @@
 'use client'; // This is a client component because it uses hooks
 
 import React from 'react';
-import Logo from './Logo';
-import NavLink from '../components/Navlink';
+import Logo from './ui/Logo';
+import NavLink from './ui/Navlink';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);

@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
             </button>
           </div>
         </main>
-        <StatsBar />
+
       </div>
     </div>
   );
