@@ -8,10 +8,18 @@
     "product": "Product"
   },
   "values": {
-    "integrityDescription": "Wij zijn toegewijd aan het voeren van zaken met eerlijkheid, ethiek en transparantie in elk aspect van onze operaties.",
     "integrityTitle": "Integriteit",
-    "qualityDescription": "We geven altijd prioriteit aan kwaliteit in elk product en elke dienst die we aanbieden om aan de verwachtingen van de klant te voldoen en deze te overtreffen.",
-    "qualityTitle": "Kwaliteit"
+    "integrityDescription": "Wij zetten ons in om in elk aspect van onze bedrijfsvoering zaken te doen met eerlijkheid, ethiek en transparantie.",
+    "qualityTitle": "Kwaliteit",
+    "qualityDescription": "Wij geven altijd prioriteit aan kwaliteit in elk product en elke dienst die we aanbieden om de verwachtingen van de klant te overtreffen.",
+    "innovationTitle": "Innovatie",
+    "innovationDescription": "Wij geven altijd prioriteit aan kwaliteit in elk product en elke dienst die we aanbieden om de verwachtingen van de klant te overtreffen.",
+    "satisfactionTitle": "Klanttevredenheid",
+    "satisfactionDescription": "Wij voeren onze zaken met eerlijkheid, transparantie en ethische principes.",
+    "serviceTitle": "Klantenservice",
+    "serviceDescription": "Wij geven prioriteit aan klanttevredenheid door een responsieve, attente en professionele service.",
+    "cooperationTitle": "Samenwerking",
+    "cooperationDescription": "Wij geloven dat samenwerking met klanten, zakenpartners en gemeenschappen de sleutel is tot het behalen van wederzijds succes."
   },
   "vision": {
     "mission1": "Bouw langdurige relaties op met klanten en zakenpartners op basis van vertrouwen en wederzijdse tevredenheid.",

@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "catalog": "下载目录",
+    "contact": "联系我们",
+    "paragraph": "印多木炭供应公司成立于2021年，致力于为客户提供最佳、最快和最可靠的服务。自成立以来，公司专注于高质量压块的生产和出口。"
+  },
+  "stat": {
+    "product": "产品"
+  },
+  "values": {
+    "integrityTitle": "诚信",
+    "integrityDescription": "我们致力于在运营的各个方面都秉持诚实、道德和透明的原则开展业务。",
+    "qualityTitle": "品质",
+    "qualityDescription": "我们始终将我们提供的每一项产品和服务的质量放在首位，以满足并超越客户的期望。",
+    "innovationTitle": "创新",
+    "innovationDescription": "我们始终将我们提供的每一项产品和服务的质量放在首位，以满足并超越客户的期望。",
+    "satisfactionTitle": "客户满意度",
+    "satisfactionDescription": "我们以诚实、透明和道德的原则开展业务。",
+    "serviceTitle": "客户服务",
+    "serviceDescription": "我们通过快速响应、周到和专业的服务，优先考虑客户满意度。",
+    "cooperationTitle": "合作",
+    "cooperationDescription": "我们相信，与客户、业务伙伴和社区的合作是实现共同成功的关键。"
+  },
+  "vision": {
+    "mission1": "与客户和商业伙伴建立基于信任和相互满意的长期关系。",
+    "mission2": "开发高效可靠的国际分销网络，以满足全球市场的需求。",
+    "mission3": "通过持续培训和专业发展提升员工技能和福利。",
+    "title": "我们的愿景和使命",
+    "vision": "成为一家领先的出口公司，提供高质量和可持续的产品，为全球经济做出积极贡献。"
+  }
+}

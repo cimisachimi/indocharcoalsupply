@@ -32,23 +32,23 @@ const OurValues: React.FC = () => {
     },
     {
       icon: <IconInnovation />,
-      title: 'Innovation',
-      description: 'We continue to innovate and develop creative solutions to meet the needs of a dynamic global market.',
+      title: t('innovationTitle'),
+      description: t('innovationDescription'),
     },
     {
       icon: <IconCustomerSatisfaction />,
-      title: 'Customer Satisfaction',
-      description: 'We conduct our business with honesty, transparency, and ethical principles.',
+      title: t('satisfactionTitle'),
+      description: t('satisfactionDescription'),
     },
     {
       icon: <IconCustomerService />,
-      title: 'Customer Service',
-      description: 'We prioritize customer satisfaction through responsive, attentive, and professional service.',
+      title: t('serviceTitle'),
+      description: t('serviceDescription'),
     },
     {
       icon: <IconCooperation />,
-      title: 'Cooperation',
-      description: 'We believe that cooperation and collaboration with customers, business partners, and communities is the key to achieving mutual success.',
+      title: t('cooperationTitle'),
+      description: t('cooperationDescription'),
     },
   ];
 

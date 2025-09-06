@@ -8,10 +8,18 @@
     "product": "Produkt"
   },
   "values": {
-    "integrityDescription": "Wir verpflichten uns, Geschäfte mit Ehrlichkeit, Ethik und Transparenz in jedem Aspekt unserer Geschäftstätigkeit zu führen.",
     "integrityTitle": "Integrität",
-    "qualityDescription": "Wir priorisieren immer die Qualität in jedem Produkt und jeder Dienstleistung, die wir anbieten, um die Erwartungen der Kunden zu erfüllen und zu übertreffen.",
-    "qualityTitle": "Qualität"
+    "integrityDescription": "Wir verpflichten uns, in jedem Aspekt unserer Geschäftstätigkeit ehrlich, ethisch und transparent zu handeln.",
+    "qualityTitle": "Qualität",
+    "qualityDescription": "Wir legen stets Wert auf Qualität bei jedem Produkt und jeder Dienstleistung, die wir anbieten, um die Erwartungen der Kunden zu erfüllen und zu übertreffen.",
+    "innovationTitle": "Innovation",
+    "innovationDescription": "Wir legen stets Wert auf Qualität bei jedem Produkt und jeder Dienstleistung, die wir anbieten, um die Erwartungen der Kunden zu erfüllen und zu übertreffen.",
+    "satisfactionTitle": "Kundenzufriedenheit",
+    "satisfactionDescription": "Wir führen unsere Geschäfte mit Ehrlichkeit, Transparenz und ethischen Grundsätzen.",
+    "serviceTitle": "Kundenservice",
+    "serviceDescription": "Wir priorisieren die Kundenzufriedenheit durch einen reaktionsschnellen, aufmerksamen und professionellen Service.",
+    "cooperationTitle": "Zusammenarbeit",
+    "cooperationDescription": "Wir glauben, dass die Zusammenarbeit mit Kunden, Geschäftspartnern und Gemeinschaften der Schlüssel zum gemeinsamen Erfolg ist."
   },
   "vision": {
     "mission1": "Langfristige Beziehungen zu Kunden und Geschäftspartnern auf der Grundlage von Vertrauen und gegenseitiger Zufriedenheit aufbauen.",

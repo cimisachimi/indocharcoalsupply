@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "catalog": "Télécharger le catalogue",
+    "contact": "Contactez-nous",
+    "paragraph": "La société Indo Charcoal Supply a été fondée en 2021 avec un fort engagement à fournir aux clients les meilleurs, les plus rapides et les plus fiables services. Depuis sa création, la société s'est concentrée sur la production et l'exportation de briquettes de haute qualité."
+  },
+  "stat": {
+    "product": "Produit"
+  },
+  "values": {
+    "integrityTitle": "Intégrité",
+    "integrityDescription": "Nous nous engageons à mener nos activités avec honnêteté, éthique et transparence dans tous les aspects de nos opérations.",
+    "qualityTitle": "Qualité",
+    "qualityDescription": "Nous accordons toujours la priorité à la qualité de chaque produit et service que nous offrons pour répondre aux attentes des clients et les dépasser.",
+    "innovationTitle": "Innovation",
+    "innovationDescription": "Nous accordons toujours la priorité à la qualité de chaque produit et service que nous offrons pour répondre aux attentes des clients et les dépasser.",
+    "satisfactionTitle": "Satisfaction du client",
+    "satisfactionDescription": "Nous menons nos activités avec honnêteté, transparence et principes éthiques.",
+    "serviceTitle": "Service client",
+    "serviceDescription": "Nous accordons la priorité à la satisfaction de nos clients grâce à un service réactif, attentif et professionnel.",
+    "cooperationTitle": "Coopération",
+    "cooperationDescription": "Nous croyons que la coopération et la collaboration avec les clients, les partenaires commerciaux et les communautés sont la clé du succès mutuel."
+  },
+  "vision": {
+    "mission1": "Établir des relations à long terme avec les clients et les partenaires commerciaux basées sur la confiance et la satisfaction mutuelle.",
+    "mission2": "Développer un réseau de distribution international efficace et fiable pour répondre aux besoins du marché mondial.",
+    "mission3": "Améliorer les compétences et le bien-être des employés grâce à une formation continue et au développement professionnel.",
+    "title": "Notre vision et mission",
+    "vision": "Être une entreprise d'exportation leader qui fournit des produits de haute qualité et durables, et qui contribue positivement à l'économie mondiale."
+  }
+}

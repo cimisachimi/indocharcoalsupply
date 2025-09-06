@@ -1,13 +1,12 @@
 import React from "react";
 
 const LocationMap: React.FC = () => {
-  // ✅ Use the place embed link from Google Maps (this includes a marker)
+  // ✅ Embed link for the preview
   const mapSrc =
     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65100.8996016666!2d110.34813238201151!3d-7.792446326971951!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a599776e6106f%3A0x20bdbbe67a545403!2sIndocharcoalsupply!5e0!3m2!1sen!2sid!4v1756979870049!5m2!1sen!2sid";
 
-  // ✅ Direct link to open full Google Maps
-  const mapsLink =
-    "https://www.google.com/maps/place/Indocharcoalsupply/@-7.7924463,110.3481324,15z";
+  // ✅ Direct link (Google Maps app / web shortlink)
+  const mapsLink = "https://maps.app.goo.gl/8vF5ZarJ3CUZzUYs9";
 
   return (
     <section id="location" className="bg-white py-24 sm:py-32">

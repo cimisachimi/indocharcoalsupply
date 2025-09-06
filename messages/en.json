@@ -10,8 +10,16 @@
   "values": {
     "integrityDescription": "We are committed to conducting business with honesty, ethics and transparency in every aspect of our operations.",
     "integrityTitle": "Integrity",
+    "qualityTitle": "Quality",
     "qualityDescription": "We always prioritize quality in every product and service we offer to meet and exceed customer expectations.",
-    "qualityTitle": "Quality"
+    "innovationTitle": "Innovation",
+    "innovationDescription": "We always prioritize quality in every product and service we offer to meet and exceed customer expectations.",
+    "satisfactionTitle": "Customer Satisfaction",
+    "satisfactionDescription": "We conduct our business with honesty, transparency, and ethical principles.",
+    "serviceTitle": "Customer Service",
+    "serviceDescription": "We prioritize customer satisfaction through responsive, attentive, and professional service.",
+    "cooperationTitle": "Cooperation",
+    "cooperationDescription": "We believe that cooperation and collaboration with customers, business partners, and communities is the key to achieving mutual success."
   },
   "vision": {
     "mission1": "Establish long-term relationships with customers and business partners based on trust and mutual satisfaction.",
