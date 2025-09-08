@@ -7,6 +7,10 @@ const Packaging: React.FC = () => {
 
   return (
     <section id="packaging" className="bg-gradient-to-br from-gray-50 to-white py-24 sm:py-32 relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: "url('/charcoal-bg.webp')" }}
+      />
       {/* Background Shapes for Visual Interest (Optional, but adds a modern touch) */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-brand-orange/5 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
       <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-blue-300/5 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -14,32 +18,30 @@ const Packaging: React.FC = () => {
 
 
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 text-center lg:text-left mb-8 leading-tight"> {/* text-center menjadi text-left, mb-16 menjadi mb-8 */}
+        <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 text-center mb-8 leading-tight">
           {t('title')}
-          {/* Sub-judul dengan latar belakang oranye */}
-          <span className="block w-fit mx-auto lg:mx-0 bg-brand-orange text-white text-base lg:text-lg font-semibold px-4 py-2 rounded-full mt-4"> {/* Menambahkan background, text-white, padding, rounded-full, mt-4 */}
+          <span className="block mx-auto w-fit bg-brand-orange text-white text-base lg:text-lg font-semibold px-4 py-2 rounded-full mt-4">
             Your Brand, Our Packaging
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-20 items-stretch mt-16"> {/* Menambahkan mt-16 untuk jarak dari judul */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-20 items-stretch mt-16">
           {/* Master Box Section */}
           <div className="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-72 w-full max-w-sm mb-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center p-6 border border-gray-100">
+            {/* Hapus kelas bg-gradient-to-br from-gray-50 to-gray-100 */}
+            <div className="relative h-72 w-full max-w-sm mb-8 rounded-2xl flex items-center justify-center p-6 border border-gray-100">
               <Image
                 src="/packaging/masterbox.webp"
                 alt={t('masterAlt')}
                 fill
                 style={{ objectFit: 'contain' }}
-                className="p-4"
+                className="p-2"
               />
             </div>
-            {/* Judul Box menjadi abu-abu gelap */}
             <h3 className="text-2xl font-extrabold text-gray-800 mb-3 uppercase tracking-wide">{t('masterTitle')}</h3>
             <p className="text-gray-700 mb-6 max-w-md leading-relaxed">{t('masterDescription')}</p>
             <h4 className="font-semibold text-gray-700 text-lg mb-4">{t('masterAvailable')}</h4>
             <ul className="flex justify-center gap-x-6 gap-y-3 flex-wrap text-lg font-medium">
-              {/* Item ukuran dengan latar belakang oranye pudar dan teks oranye gelap */}
               <li className="bg-brand-orange/10 text-brand-orange font-bold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('masterSize10')}</li>
               <li className="bg-brand-orange/10 text-brand-orange font-bold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('masterSize12')}</li>
               <li className="bg-brand-orange/10 text-brand-orange font-bold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('masterSize15')}</li>
@@ -49,21 +51,20 @@ const Packaging: React.FC = () => {
 
           {/* Inner Box Section */}
           <div className="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-72 w-full max-w-sm mb-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center p-6 border border-gray-100">
+            {/* Hapus kelas bg-gradient-to-br from-gray-50 to-gray-100 */}
+            <div className="relative h-72 w-full max-w-sm mb-8 rounded-2xl flex items-center justify-center p-6 border border-gray-100">
               <Image
                 src="/packaging/innerbox.webp"
                 alt={t('innerAlt')}
                 fill
                 style={{ objectFit: 'contain' }}
-                className="p-4"
+                className="p-6"
               />
             </div>
-            {/* Judul Box menjadi abu-abu gelap */}
             <h3 className="text-2xl font-extrabold text-gray-800 mb-3 uppercase tracking-wide">{t('innerTitle')}</h3>
             <p className="text-gray-700 mb-6 max-w-md leading-relaxed">{t('innerDescription')}</p>
             <h4 className="font-semibold text-gray-700 text-lg mb-4">{t('innerAvailable')}</h4>
             <ul className="flex justify-center gap-x-6 gap-y-3 flex-wrap text-lg font-medium">
-              {/* Item ukuran dengan latar belakang oranye pudar dan teks oranye gelap */}
               <li className="bg-brand-orange/10 text-brand-orange font-bold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('innerSize1to2')}</li>
               <li className="bg-brand-orange/10 text-brand-orange font-bold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('innerSize250to500')}</li>
             </ul>
