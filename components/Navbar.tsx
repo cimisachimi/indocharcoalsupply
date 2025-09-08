@@ -5,9 +5,11 @@ import Logo from './ui/Logo';
 import NavLink from './ui/Navlink';
 import { usePathname, useRouter } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import ReactCountryFlag from 'react-country-flag';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
+  const [isLangOpen, setIsLangOpen] = React.useState<boolean>(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -21,7 +23,18 @@ const Navbar: React.FC = () => {
     { href: '#contact', label: 'Contact' },
   ];
 
-  // Extract current locale from pathname (/en, /nl, etc.)
+  // Locale -> Flag map
+  const localeFlags: Record<string, string> = {
+    en: 'US',
+    de: 'DE',
+    ar: 'SA',
+    nl: 'NL',
+    zh: 'CN',
+    fr: 'FR',
+    ja: 'JP',
+  };
+
+  // Extract current locale from pathname
   const currentLocale =
     routing.locales.find((loc) => pathname.startsWith(`/${loc}`)) ||
     routing.defaultLocale;
@@ -32,7 +45,55 @@ const Navbar: React.FC = () => {
       ''
     );
     router.push(`/${locale}${pathWithoutLocale}`);
+    setIsLangOpen(false);
   };
+
+  // Language Switcher Component (reusable for desktop & mobile)
+  const LanguageSwitcher = () => (
+    <div className="relative">
+      <button
+        onClick={() => setIsLangOpen(!isLangOpen)}
+        className="flex items-center gap-2 bg-zinc-800 px-2 py-1 rounded-md text-sm text-white border border-zinc-600 hover:bg-zinc-700"
+        aria-label="Select language"
+      >
+        <ReactCountryFlag
+          countryCode={localeFlags[currentLocale] || 'US'}
+          svg
+          style={{ width: '1.25em', height: '1.25em' }}
+        />
+        <span className="uppercase">{currentLocale}</span>
+        <svg
+          className={`ml-1 h-4 w-4 transition-transform ${isLangOpen ? 'rotate-180' : ''
+            }`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {isLangOpen && (
+        <div className="absolute right-0 mt-2 w-32 rounded-md bg-zinc-800 shadow-lg border border-zinc-600">
+          {routing.locales.map((loc) => (
+            <button
+              key={loc}
+              onClick={() => changeLocale(loc)}
+              className="flex items-center gap-2 w-full px-3 py-2 text-sm text-white hover:bg-zinc-700"
+            >
+              <ReactCountryFlag
+                countryCode={localeFlags[loc] || 'US'}
+                svg
+                style={{ width: '1.25em', height: '1.25em' }}
+              />
+              <span className="uppercase">{loc}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 h-12 transition-colors duration-300 ease-in-out bg-zinc-900/90 backdrop-blur-sm">
@@ -50,20 +111,9 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Right side: Language Switcher */}
+        {/* Right side */}
         <div className="flex items-center space-x-4">
-          <select
-            value={currentLocale}
-            onChange={(e) => changeLocale(e.target.value)}
-            className="bg-zinc-800 text-white rounded-md px-2 py-1 text-sm border border-zinc-600"
-            aria-label="Select language"
-          >
-            {routing.locales.map((loc) => (
-              <option key={loc} value={loc}>
-                {loc.toUpperCase()}
-              </option>
-            ))}
-          </select>
+          <LanguageSwitcher />
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
@@ -81,11 +131,7 @@ const Navbar: React.FC = () => {
                   stroke="currentColor"
                   strokeWidth={2}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
                 <svg
@@ -96,11 +142,7 @@ const Navbar: React.FC = () => {
                   stroke="currentColor"
                   strokeWidth={2}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
               )}
             </button>
@@ -118,21 +160,6 @@ const Navbar: React.FC = () => {
               </NavLink>
             ))}
 
-            {/* Language switcher also in mobile */}
-            <li>
-              <select
-                value={currentLocale}
-                onChange={(e) => changeLocale(e.target.value)}
-                className="bg-zinc-800 text-white rounded-md px-2 py-1 text-sm border border-zinc-600"
-                aria-label="Select language"
-              >
-                {routing.locales.map((loc) => (
-                  <option key={loc} value={loc}>
-                    {loc.toUpperCase()}
-                  </option>
-                ))}
-              </select>
-            </li>
           </ul>
         </nav>
       )}
