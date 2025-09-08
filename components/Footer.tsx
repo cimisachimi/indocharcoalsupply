@@ -59,10 +59,10 @@ const Footer: React.FC = () => {
               <li className="flex items-center justify-center md:justify-start gap-3">
                 <IconEmail />
                 <a
-                  href="mailto:briquettesupplier@gmail.com"
+                  href="mailto:info@indocharcoalsupply.com"
                   className="hover:text-white"
                 >
-                  briquettesupplier@gmail.com
+                  info@indocharcoalsupply.com
                 </a>
               </li>
               <li className="flex items-center justify-center md:justify-start gap-3">

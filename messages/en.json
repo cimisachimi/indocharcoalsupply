@@ -16,7 +16,7 @@
   "stat": {
     "product": "Product",
     "client": "Client",
-    "testimonie": "Testimonie"
+    "testimonie": "Testimonies"
   },
   "values": {
     "integrityDescription": "We are committed to conducting business with honesty, ethics and transparency in every aspect of our operations.",
@@ -69,7 +69,7 @@
     "aboutParagraph1": "Our team can provide support with your shipping needs. Please contact us for further information.",
     "aboutParagraph2": "Our minimum order quantity (MOQ) is 1 container 18 tons (20’ft). Contact us to discuss your needs with our team to determine the optimal MOQ for your business.",
     "guideTitle": "PURCHASE GUIDE: POLICIES & PROCEDURES",
-    "guideParagraph": "We ensure secure transactions with T/T and L/C payment methods. A 50% deposit confirms your order and starts production. The final 50% is processed upon production completion."
+    "guideParagraph": "We ensure transactions with T/T and L/C payment methods. A 50% down payment for your order and starts production. The final 50% is processed upon the production completion or upon the closing container in our shipping port."
   },
   "packaging": {
     "title": "Packaging Options",
