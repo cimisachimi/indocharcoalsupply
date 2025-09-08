@@ -26,8 +26,8 @@ const StatsBar: React.FC = () => {
         lg:gap-16 lg:px-16 lg:py-8
       ">
         <StatItem value="15+" label={t('product')} />
-        <StatItem value="20+" label="Client" />
-        <StatItem value="15+" label="Testimonie" />
+        <StatItem value="20+" label={t('client')} />
+        <StatItem value="15+" label={t('testimonie')} />
       </div>
     </div>
   );
