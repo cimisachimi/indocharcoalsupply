@@ -10,6 +10,7 @@ import Testimonials from "@/components/Testimonials";
 import OurTeam from "@/components/OurTeam";
 import Footer from "@/components/Footer";
 import LocationMap from "@/components/LocationMap";
+import ProductionProcess from "@/components/ProdProcess";
 
 import { useTranslations } from 'next-intl';
 
@@ -34,6 +35,7 @@ export default function HomePage() {
       <div id="product">
         <Products />
       </div>
+      <ProductionProcess />
       <Packaging />
       <Shipping />
       <Testimonials />
