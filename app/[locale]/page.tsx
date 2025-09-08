@@ -1,16 +1,20 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import VisionMission from "@/components/VisionMission";
-import OurValues from "@/components/OurValues";
-import Products from "@/components/Product";
-import Packaging from "@/components/Packaging";
-import Shipping from "@/components/Shipping";
-import GallerySlider from '@/components/GallerySlider';
-import Testimonials from "@/components/Testimonials";
-import OurTeam from "@/components/OurTeam";
-import Footer from "@/components/Footer";
-import LocationMap from "@/components/LocationMap";
-import ProductionProcess from "@/components/ProdProcess";
+// Import 'dynamic' from Next.js
+import dynamic from 'next/dynamic';
+
+// Dynamically import components that are below the fold
+const VisionMission = dynamic(() => import('@/components/VisionMission'));
+const OurValues = dynamic(() => import('@/components/OurValues'));
+const Products = dynamic(() => import('@/components/Product'));
+const ProductionProcess = dynamic(() => import('@/components/ProdProcess'));
+const Packaging = dynamic(() => import('@/components/Packaging'));
+const Shipping = dynamic(() => import('@/components/Shipping'));
+const Testimonials = dynamic(() => import('@/components/Testimonials'));
+const GallerySlider = dynamic(() => import('@/components/GallerySlider'));
+const OurTeam = dynamic(() => import('@/components/OurTeam'));
+const Footer = dynamic(() => import('@/components/Footer'));
+const LocationMap = dynamic(() => import('@/components/LocationMap'));
 
 import { useTranslations } from 'next-intl';
 
@@ -20,11 +24,7 @@ export default function HomePage() {
       <Navbar />
       <div id="home">
         <Hero />
-        {/* StatsBar sudah ada DI DALAM Hero, jadi tidak perlu dipanggil lagi */}
       </div>
-
-      {/* HAPUS BARIS INI */}
-      {/* <StatsBar /> */}
 
       <div id="product-profile">
         <VisionMission />
