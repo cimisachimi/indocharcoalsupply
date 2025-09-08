@@ -3,10 +3,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-// A simple SVG icon for the accordion dropdown.
-interface ChevronDownIconProps extends React.SVGProps<SVGSVGElement> { }
 
-const ChevronDownIcon: React.FC<ChevronDownIconProps> = (props) => (
+
+const ChevronDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg viewBox="0 0 24 24" fill="none" {...props}>
     <path
       d="M19.9201 8.9502L13.4001 15.4702C12.6301 16.2402 11.3701 16.2402 10.6001 15.4702L4.08008 8.9502"
@@ -18,6 +17,7 @@ const ChevronDownIcon: React.FC<ChevronDownIconProps> = (props) => (
     />
   </svg>
 );
+
 
 const processSteps = [
   {
