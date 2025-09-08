@@ -12,9 +12,9 @@ const InfoCard = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
+  <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl">
     <div className="flex items-center gap-4 mb-4">
-      <div className="flex-shrink-0 grid h-12 w-12 place-content-center rounded-full bg-orange-100 text-brand-orange">
+      <div className="flex-shrink-0 grid h-12 w-12 place-content-center rounded-full bg-brand-orange/10 text-brand-orange">
         {icon}
       </div>
       <h3 className="text-xl font-extrabold text-gray-900 tracking-tight">{title}</h3>
@@ -30,19 +30,19 @@ const Shipping: React.FC = () => {
   return (
     <section id="shipping" className="bg-gray-50 py-24 sm:py-32">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Column 1: Image */}
-          <div className="transform transition-transform duration-300 hover:scale-105">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Column 1: Image - Disesuaikan agar lebih seimbang dengan dua card */}
+          <div className="relative w-full aspect-square mx-auto max-w-lg lg:max-w-none transform transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src="/idi.webp"
-              width={600}
-              height={400}
               alt={t('containerAlt')}
-              className="rounded-2xl w-full h-auto"
+              fill
+              style={{ objectFit: 'cover' }}
+              className="rounded-3xl shadow-xl"
             />
           </div>
 
-          {/* Column 2: Info */}
+          {/* Column 2: Info Cards */}
           <div className="flex flex-col gap-8">
             <InfoCard icon={<IconShipping />} title={t('aboutTitle')}>
               <p>{t('aboutParagraph1')}</p>
