@@ -1,167 +1,190 @@
-import React from "react";
-import Image from 'next/image';
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
+
+// A simple SVG icon for the accordion dropdown.
+interface ChevronDownIconProps extends React.SVGProps<SVGSVGElement> { }
+
+const ChevronDownIcon: React.FC<ChevronDownIconProps> = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" {...props}>
+    <path
+      d="M19.9201 8.9502L13.4001 15.4702C12.6301 16.2402 11.3701 16.2402 10.6001 15.4702L4.08008 8.9502"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 const processSteps = [
   {
     id: "01",
-    icon: { type: "svg", value: "/prod-icon/mount.svg" },
+    icon: "/prod-icon/mount.svg",
     title: "Sourcing and Selection",
     description:
-      "We begin by sourcing the finest coconut shells from sustainable plantations. These shells are carefully selected to ensure they are of the highest quality and free from impurities.",
+      "We begin by sourcing the finest coconut shells from sustainable plantations. Carefully selected for quality and purity.",
   },
   {
     id: "02",
-    icon: { type: "svg", value: "/prod-icon/sun.svg" },
+    icon: "/prod-icon/sun.svg",
     title: "Drying",
     description:
-      "The collected coconut shells are thoroughly dried to reduce moisture content. This step is crucial for ensuring efficient carbonization and producing high-quality briquettes.",
+      "The coconut shells are dried to reduce moisture content, ensuring efficient carbonization and high-quality briquettes.",
   },
   {
     id: "03",
-    icon: { type: "svg", value: "/prod-icon/bike.svg" },
+    icon: "/prod-icon/bike.svg",
     title: "Carbonization",
     description:
-      "The dried coconut shells are then placed in carbonization chambers or kilns. Under controlled temperature and oxygen conditions, the shells undergo a process of pyrolysis, converting them into charcoal. This process removes volatile matter and impurities, resulting in a high-carbon content product.",
+      "Shells are carbonized in kilns under controlled temperature and oxygen conditions, producing high-carbon charcoal.",
   },
   {
     id: "04",
-    icon: { type: "svg", value: "/prod-icon/double.svg" },
+    icon: "/prod-icon/double.svg",
     title: "Crushing and Screening",
     description:
-      "The carbonized material is crushed and screened to achieve the desired particle size. This step ensures uniformity in the briquettes and optimizes their burning properties.",
+      "Charcoal is crushed and screened to achieve uniform particle size, optimizing burning properties.",
   },
   {
     id: "05",
-    icon: { type: "svg", value: "/prod-icon/mix.svg" },
+    icon: "/prod-icon/mix.svg",
     title: "Mixing and Binding",
     description:
-      "The crushed charcoal is mixed with a natural binder, such as starch or clay. This binding agent helps to hold the briquettes together during the forming process.",
+      "The charcoal is mixed with natural binders like starch or clay to hold the briquettes together.",
   },
   {
     id: "06",
-    icon: { type: "svg", value: "/prod-icon/arrow.svg" },
+    icon: "/prod-icon/arrow.svg",
     title: "Molding and Pressing",
     description:
-      "The charcoal blend is then compressed into molds to achieve the desired shape and size of the briquettes. The level of pressure applied in this stage plays a crucial role in determining the density and durability of the final product.",
+      "The blend is pressed into molds. Pressure determines the briquette’s density and durability.",
   },
   {
     id: "07",
-    icon: { type: "svg", value: "/prod-icon/sun 2.svg" },
-    title: "Drying",
+    icon: "/prod-icon/sun 2.svg",
+    title: "Final Drying",
     description:
-      "The formed briquettes are thoroughly dried to eliminate any residual moisture. This process ensures they are fully prepared for packaging and distribution.",
+      "The molded briquettes are dried again to remove residual moisture, ready for packaging.",
   },
   {
     id: "08",
-    icon: { type: "svg", value: "/prod-icon/shield.svg" },
+    icon: "/prod-icon/shield.svg",
     title: "Quality Control",
     description:
-      "Every batch of briquettes goes through strict quality control checks to ensure they meet our high standards. We evaluate key factors such as density, moisture content, ash content, and burn duration.",
+      "Each batch undergoes strict quality checks: density, ash, moisture, and burn duration.",
   },
   {
     id: "09",
-    icon: { type: "svg", value: "/prod-icon/package.svg" },
-    title: "Quality Control",
+    icon: "/prod-icon/package.svg",
+    title: "Packaging",
     description:
-      "The final briquettes are meticulously packaged to ensure protection during transportation and storage. We provide various packaging options to accommodate different customer requirements.",
+      "Finished briquettes are carefully packaged to protect them during transport and storage.",
   },
   {
     id: "10",
-    icon: { type: "svg", value: "/prod-icon/safe.svg" },
-    title: "Quality Control",
+    icon: "/prod-icon/safe.svg",
+    title: "Storage",
     description:
-      "Store the briquettes in a dry, well-ventilated area away from direct sunlight and heat sources.",
+      "Briquettes should be stored in a dry, ventilated place away from direct sunlight and heat.",
   },
 ];
 
-const renderIcon = (icon: { type: any; value: any; }) => {
-  if (icon.type === "emoji") {
-    return <span style={{ fontSize: "24px" }}>{icon.value}</span>;
-  } else if (icon.type === "svg") {
-    return (
-      <Image
-        src={icon.value}
-        alt="Step icon"
-        width={40}
-        height={40}
-        style={{ 
-          marginBottom: "10px",
-          filter: "invert(29%) sepia(93%) saturate(5132%) hue-rotate(353deg) brightness(98%) contrast(105%)" }}
-      />
-    );
-  }
-  return null;
-};
-
 const ProductionProcess = () => {
+  // State to manage which accordion item is open on mobile. Default to '01'.
+  const [openStep, setOpenStep] = useState<string | null>("01");
+
+  const toggleStep = (id: string) => {
+    // If the clicked step is already open, close it. Otherwise, open it.
+    setOpenStep(openStep === id ? null : id);
+  };
+
   return (
-    <section
-      style={{
-        backgroundImage: "url('/prod-cover.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        color: "#fff",
-        padding: "60px 20px",
-        minHeight: "100vh",
-        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-      }}
-    >
-      
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <h1 style={{ fontWeight: "700", fontSize: "2.8rem", marginBottom: "10px", textAlign: "center" }}>
-          Production <em>Process</em>
-        </h1>
-        <p style={{ marginBottom: "40px", fontSize: "1rem", lineHeight: "1.5", color: "#ddd", textAlign: "center"}}>
-          Our Products is premium coconut charcoal briquettes are made from the finest coconut shells, ensuring superior quality and performance. Crafted with precision and care, our briquettes offer exceptional heat output, long burn times, and minimal ash. Perfect for grilling, barbecuing, and indoor fireplaces, our products provide a clean and efficient burn, enhancing the flavor of your food.
+    <section className="bg-white text-gray-900 py-16 px-6">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+          PRODUCTION PROCESS
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
+          Our coconut charcoal briquettes are crafted through a meticulous
+          process that ensures the highest quality and sustainability. Here’s a
+          breakdown of our production steps:
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "20px",
-            alignItems: "start",
-          }}
-        >
-          {processSteps.map(({ id, icon, title, description }) => (
-            <div
-              key={id}
-              style={{
-                backgroundColor: "#fff",
-                color: "#000",
-                borderRadius: "12px",
-                padding: "24px",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100%"
-              }}
-            >
-              <span
-                style={{
-                  position: "absolute",
-                  top: "20px",
-                  right: "20px",
-                  fontSize: "3.5rem",
-                  fontWeight: "800",
-                  color: "rgba(0, 0, 0, 0.05)",
-                  userSelect: "none",
-                }}
+        {/* =============================================================== */}
+        {/* Mobile View: Accordion (visible below lg breakpoint)            */}
+        {/* =============================================================== */}
+        <div className="lg:hidden space-y-3">
+          {processSteps.map((step) => (
+            <div key={step.id} className="rounded-lg border border-gray-200 overflow-hidden">
+              <button
+                onClick={() => toggleStep(step.id)}
+                className="w-full flex justify-between items-center p-4 text-left"
               >
-                {id}
-              </span>
-
-              {/* Icon di kiri atas */}
-              <div style={{ marginBottom: "12px" }}>{renderIcon(icon)}</div>
-              
-              {/* Judul & Deskripsi */}
-              <h3 style={{ fontWeight: "700", marginBottom: "10px" }}>{title}</h3>
-              <p style={{ fontSize: "0.95rem", lineHeight: "1.5", color: "#444" }}>{description}</p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-orange-100">
+                    <Image
+                      src={step.icon}
+                      alt={step.title}
+                      width={24}
+                      height={24}
+                      className="filter invert-[39%] sepia-[98%] saturate-[2976%] hue-rotate-[359deg] brightness-[97%] contrast-[101%]"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-800">{step.title}</h3>
+                </div>
+                <ChevronDownIcon
+                  className={`w-6 h-6 text-orange-500 transition-transform duration-300 ${openStep === step.id ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
+              <div
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${openStep === step.id ? "max-h-48" : "max-h-0"
+                  }`}
+              >
+                <div className="px-4 pb-4 pt-2">
+                  <p className="text-sm text-gray-600 text-left">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
+        </div>
 
+        {/* =============================================================== */}
+        {/* Desktop View: Enhanced Grid (hidden below lg breakpoint)       */}
+        {/* =============================================================== */}
+        <div className="hidden lg:grid gap-x-6 gap-y-16 lg:grid-cols-5">
+          {processSteps.map((step) => (
+            <div key={step.id} className="relative flex flex-col items-center text-center pt-8">
+              {/* Step number, styled to clearly show order */}
+              <div className="absolute top-0 flex items-center justify-center w-16 h-16 bg-white border-2 border-orange-200 text-orange-500 font-extrabold text-2xl rounded-full">
+                {step.id}
+              </div>
+
+              {/* Icon */}
+              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-orange-100 mb-4">
+                <Image
+                  src={step.icon}
+                  alt={step.title}
+                  width={36}
+                  height={36}
+                  className="filter invert-[39%] sepia-[98%] saturate-[2976%] hue-rotate-[359deg] brightness-[97%] contrast-[101%]"
+                />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {step.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
