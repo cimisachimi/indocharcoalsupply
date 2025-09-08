@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl'
 
 // --- Defines the structure for a product specification item ---
 interface SpecificationItem {
@@ -27,12 +28,17 @@ interface Product {
 
 // --- ProductCard component with shape names on images ---
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+  //translation variable string
+
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
   const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+  //translation
+
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -129,65 +135,61 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
 // --- Main Products component with updated data structure ---
 const Products: React.FC = () => {
+  const t = useTranslations('product');
+
   const products: Product[] = [
     {
       id: 'shisha-briquette',
-      type: 'Briquette for Shisha',
+      type: t('shishaType'),
       images: [
-        { src: '/coal-shape/cube.webp', shape: 'Cube' },
-        { src: '/coal-shape/cube-high-temperature.webp', shape: 'High Temperature' },
-        { src: '/coal-shape/cloud.webp', shape: 'Cloud' },
-        { src: '/coal-shape/flat.webp', shape: 'Flat' },
-        { src: '/coal-shape/cube-high-flow.webp', shape: 'High Flow' }
+        { src: '/coal-shape/cube.webp', shape: t('shishaCube') },
+        { src: '/coal-shape/cube-high-temperature.webp', shape: t('shishaHighTemperature') },
+        { src: '/coal-shape/cloud.webp', shape: t('shishaCloud') },
+        { src: '/coal-shape/flat.webp', shape: t('shishaFlat') },
+        { src: '/coal-shape/cube-high-flow.webp', shape: t('shishaHighFlow') },
       ],
       specifications: [
-        { label: 'Ash Content', value: '2,0% - 2,5%' },
-        { label: 'Burning Time', value: '2 - 2,5 HOURS' },
-        { label: 'Caloric Value', value: '7000 - 7500 Kcal' },
-        { label: 'Moisture', value: '7% - 10%' },
-        { label: 'Fixed Carbon', value: '70% - 85%' },
+        { label: t('specAsh'), value: '2,0% - 2,5%' },
+        { label: t('specBurning'), value: '2 - 2,5 HOURS' },
+        { label: t('specCaloric'), value: '7000 - 7500 Kcal' },
+        { label: t('specMoisture'), value: '7% - 10%' },
+        { label: t('specFixedCarbon'), value: '70% - 85%' },
       ],
     },
     {
       id: 'bbq-briquette',
-      type: 'Briquette for BBQ',
+      type: t('bbqType'),
       images: [
-        { src: '/coal-shape/octa.webp', shape: 'Octagonal' },
-        { src: '/coal-shape/dome.webp', shape: 'Dome' },
-        { src: '/coal-shape/hexa.webp', shape: 'Hexagonal' },
-        { src: '/coal-shape/finger.webp', shape: 'Finger' }
+        { src: '/coal-shape/octa.webp', shape: t('bbqOcta') },
+        { src: '/coal-shape/dome.webp', shape: t('bbqDome') },
+        { src: '/coal-shape/hexa.webp', shape: t('bbqHexa') },
+        { src: '/coal-shape/finger.webp', shape: t('bbqFinger') },
       ],
       specifications: [
-        { label: 'Ash Content', value: '7% - 8%' },
-        { label: 'Burning Time', value: '5 - 6 HOURS' },
-        { label: 'Caloric Value', value: '6400 - 8800 Kcal' },
-        { label: 'Moisture', value: '4% - 7%' },
-        { label: 'Fixed Carbon', value: '70% - 85%' },
+        { label: t('specAsh'), value: '7% - 8%' },
+        { label: t('specBurning'), value: '5 - 6 HOURS' },
+        { label: t('specCaloric'), value: '6400 - 8800 Kcal' },
+        { label: t('specMoisture'), value: '4% - 7%' },
+        { label: t('specFixedCarbon'), value: '70% - 85%' },
       ],
     },
   ];
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
   return (
     <section id="product" className="bg-gray-50 py-24 sm:py-32">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl lg:text-5xl mb-12">
-          Our Products
+          {t('productTitle')}
         </h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.2 } },
+          }}
         >
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -199,10 +201,10 @@ const Products: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-white text-center md:text-left">
                 <h3 className="text-2xl lg:text-3xl font-bold mb-2">
-                  Need a Custom Shape?
+                  {t('customTitle')}
                 </h3>
                 <p className="text-white/80 max-w-lg">
-                  Partner with us to design custom briquette shapes and sizes that reflect your brand identity, inside and out.
+                  {t('customDescription')}
                 </p>
               </div>
               <div className="flex-shrink-0 mt-4 md:mt-0">
@@ -210,7 +212,7 @@ const Products: React.FC = () => {
                   href="#contact"
                   className="inline-block bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300"
                 >
-                  Contact Us
+                  {t('customButton')}
                 </a>
               </div>
             </div>
@@ -220,5 +222,6 @@ const Products: React.FC = () => {
     </section>
   );
 };
+
 
 export default Products;

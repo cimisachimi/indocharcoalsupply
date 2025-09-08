@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl'
 
-
-
 const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: string, children: React.ReactNode }) => (
 
 
@@ -51,10 +49,10 @@ const VisionMission: React.FC = () => {
               {t('title')}
             </h2>
             <div className="space-y-6">
-              <InfoCard icon={<IconTarget />} title="Vision">
+              <InfoCard icon={<IconTarget />} title={t('visionTitle')}>
                 <p>{t('vision')}</p>
               </InfoCard>
-              <InfoCard icon={<IconList />} title="Mission">
+              <InfoCard icon={<IconList />} title={t('missionTitle')}>
                 <ul className="list-disc list-outside pl-5 space-y-2 text-left">
                   <li>{t("mission1")}</li>
                   <li>{t("mission2")}</li>

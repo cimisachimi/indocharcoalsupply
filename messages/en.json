@@ -5,7 +5,9 @@
     "paragraph": "The company of Indo charcoal supply was established in 2021 with a strong commitment to providing customers with the best, fastest, and most reliable services. Since its inception, the company has focused on the production and export of high-quality briquettes."
   },
   "stat": {
-    "product": "Product"
+    "product": "Product",
+    "client": "Client",
+    "testimonie": "Testimonie"
   },
   "values": {
     "integrityDescription": "We are committed to conducting business with honesty, ethics and transparency in every aspect of our operations.",
@@ -22,10 +24,62 @@
     "cooperationDescription": "We believe that cooperation and collaboration with customers, business partners, and communities is the key to achieving mutual success."
   },
   "vision": {
+    "title": "Our Vision and Mission",
+    "visionTitle": "Vision",
+    "vision": "To be a leading export company that provides high quality and sustainable products, and makes a positive contribution to the global economy.",
+    "missionTitle": "Mission",
     "mission1": "Establish long-term relationships with customers and business partners based on trust and mutual satisfaction.",
     "mission2": "Develop an efficient and reliable international distribution network to meet the needs of the global market.",
-    "mission3": "Enhance employee skills and welfare through continuous training and professional development.",
-    "title": "Our Vision and Mission",
-    "vision": "To be a leading export company that provides high quality and sustainable products, and makes a positive contribution to the global economy."
+    "mission3": "Enhance employee skills and welfare through continuous training and professional development."
+  },
+  "product": {
+    "productTitle": "Our Products",
+    "specAsh": "Ash Content",
+    "specBurning": "Burning Time",
+    "specCaloric": "Caloric Value",
+    "specMoisture": "Moisture",
+    "specFixedCarbon": "Fixed Carbon",
+    "shishaType": "Briquette for Shisha",
+    "shishaCube": "Cube",
+    "shishaHighTemperature": "High Temperature",
+    "shishaCloud": "Cloud",
+    "shishaFlat": "Flat",
+    "shishaHighFlow": "High Flow",
+    "bbqType": "Briquette for BBQ",
+    "bbqOcta": "Octagonal",
+    "bbqDome": "Dome",
+    "bbqHexa": "Hexagonal",
+    "bbqFinger": "Finger",
+    "customTitle": "Need a Custom Shape?",
+    "customDescription": "Partner with us to design custom briquette shapes and sizes that reflect your brand identity, inside and out.",
+    "customButton": "Contact Us"
+  },
+  "shipping": {
+    "containerAlt": "Indo Charcoal Supply Shipping Container",
+    "aboutTitle": "ABOUT SHIPPING",
+    "aboutParagraph1": "Our team can provide support with your shipping needs. Please contact us for further information.",
+    "aboutParagraph2": "Our minimum order quantity (MOQ) is 1 container 18 tons (20’ft). Contact us to discuss your needs with our team to determine the optimal MOQ for your business.",
+    "guideTitle": "PURCHASE GUIDE: POLICIES & PROCEDURES",
+    "guideParagraph": "We ensure secure transactions with T/T and L/C payment methods. A 50% deposit confirms your order and starts production. The final 50% is processed upon production completion."
+  },
+  "packaging": {
+    "title": "Packaging Options",
+    "masterAlt": "Master Box",
+    "masterTitle": "MASTER BOX",
+    "masterDescription": "This large master box is designed to hold and protect your charcoal briquettes during shipping and storage.",
+    "masterAvailable": "Available in sizes:",
+    "masterSize10": "10 kg",
+    "masterSize12": "12 kg",
+    "masterSize15": "15 kg",
+    "masterSize20": "20 kg",
+    "innerAlt": "Inner Box",
+    "innerTitle": "INNER BOX",
+    "innerDescription": "This box is designed to protect your briquettes from moisture and damage, making them easy to carry and store.",
+    "innerAvailable": "Available sizes:",
+    "innerSize1to2": "1 - 2 kg",
+    "innerSize250to500": "250 - 500 gr",
+    "customizationText": "Our master boxes can be customized to feature your logo and branding.",
+    "customizationContact": "Contact us",
+    "customizationSuffix": "to discuss your custom design needs."
   }
 }
