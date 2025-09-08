@@ -1,29 +1,23 @@
 import React from 'react';
-import Image from 'next/image'; // Import the Image component
 import StatsBar from './StatsBar';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl'
+
 
 const Hero: React.FC = () => {
-  const t = useTranslations('hero');
+  const t = useTranslations('hero')
 
   return (
+    // The main container's height has been changed from h-screen to h-[90vh]
     <div className="relative h-[90vh] w-full pb-24 -mb-12">
       {/* Background Layers */}
-      <Image
-        src="/charcoal-bg.webp"
-        alt="Hot glowing charcoal briquettes in a grill"
-        fill
-        priority // <-- Tells Next.js to load this image first
-        sizes="100vw"
-        style={{
-          objectFit: 'cover',
-          zIndex: -1, // Places the image behind the content
-        }}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/charcoal-bg.webp')" }}
       />
-      <div className="absolute inset-0 bg-black/70 -z-10" />
+      <div className="absolute inset-0 bg-black/70" />
 
-      {/* Container for centering the text content (add z-10) */}
-      <div className="relative z-10 top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-4">
+      {/* Container for centering the text content */}
+      <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-7xl">
             Indo Charcoal

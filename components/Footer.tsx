@@ -46,14 +46,18 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Contact Info */}
+          {/* Column 3: Contact Info -- UPDATED */}
           <div>
             <h3 className="font-bold text-white mb-4 uppercase tracking-wider">
               {t('contactUs')}
             </h3>
-            <ul className="space-y-3 text-sm">
-              <li>{t('address')}</li>
-              <li>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start justify-center md:justify-start gap-3">
+                <IconAddress />
+                <span className="flex-1">{t('address')}</span>
+              </li>
+              <li className="flex items-center justify-center md:justify-start gap-3">
+                <IconEmail />
                 <a
                   href="mailto:briquettesupplier@gmail.com"
                   className="hover:text-white"
@@ -61,7 +65,8 @@ const Footer: React.FC = () => {
                   briquettesupplier@gmail.com
                 </a>
               </li>
-              <li>
+              <li className="flex items-center justify-center md:justify-start gap-3">
+                <IconPhone />
                 <a
                   href="tel:+6289687199099"
                   className="hover:text-white"
@@ -78,7 +83,6 @@ const Footer: React.FC = () => {
               {t('followUs')}
             </h3>
             <div className="flex justify-center md:justify-start space-x-4">
-              {/* Same icons */}
               <a
                 href="https://www.facebook.com/profile.php?id=61570964318471"
                 aria-label="Facebook"
@@ -120,7 +124,28 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-// Social Media SVG Icons
+
+// --- NEW ICONS ---
+const IconAddress = () => (
+  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+);
+const IconEmail = () => (
+  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+);
+const IconPhone = () => (
+  <svg
+    className="w-5 h-5 flex-shrink-0"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12.04 2C6.5 2 2 6.33 2 11.73c0 2.08.69 4.02 1.87 5.6L2 22l4.81-1.54c1.54.85 3.33 1.34 5.23 1.34 5.54 0 10.04-4.33 10.04-9.73S17.58 2 12.04 2zm0 17.71c-1.63 0-3.16-.47-4.46-1.27l-.32-.2-2.85.91.93-2.77-.22-.33c-1.02-1.41-1.61-3.09-1.61-4.9 0-4.2 3.51-7.61 7.82-7.61s7.82 3.41 7.82 7.61c0 4.19-3.51 7.56-7.82 7.56z" />
+    <path d="M16.31 14.23c-.25-.13-1.48-.73-1.71-.82-.23-.09-.4-.13-.56.13-.17.25-.64.82-.79.99-.15.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.65-1.24-1.46-1.38-1.71-.15-.25-.02-.39.11-.52.12-.12.25-.29.38-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.3-.01-.46-.01-.16 0-.43.06-.65.32-.23.25-.86.83-.86 2.02s.88 2.34 1 2.5c.13.17 1.73 2.7 4.2 3.78.59.25 1.05.39 1.41.5.59.19 1.12.16 1.54.1.47-.07 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.11-.22-.17-.47-.3z" />
+  </svg>
+);
+
+
+// --- SOCIAL MEDIA ICONS ---
 const FacebookIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" /></svg>
 );

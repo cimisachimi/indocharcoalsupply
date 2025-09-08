@@ -15,17 +15,17 @@ const images = [
 
 const GallerySlider: React.FC = () => {
 
-  const t = useTranslations('gallery'); // 👈 namespace "gallery"
+  const t = useTranslations('gallery');
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [current, setCurrent] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
 
   const handleResize = useCallback(() => {
     if (window.innerWidth < 768) {
       setItemsPerPage(1);
     } else {
-      setItemsPerPage(3);
+      setItemsPerPage(2);
     }
   }, []);
 
@@ -61,7 +61,8 @@ const GallerySlider: React.FC = () => {
 
   return (
     <section className="bg-gray-900 w-full py-24 sm:py-32">
-      <div className="container mx-auto max-w-6xl px-4">
+      {/* Re-added container and max-width for a balanced size */}
+      <div className="container mx-auto max-w-7xl px-4">
         <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl lg:text-5xl text-center mb-12">
           {t('title')}
         </h2>
@@ -72,19 +73,19 @@ const GallerySlider: React.FC = () => {
               {images.map((src, idx) => (
                 <motion.div
                   key={idx}
-                  className="flex-[0_0_100%] md:flex-[0_0_33.333%]"
+                  className="flex-[0_0_100%] md:flex-[0_0_50%]"
                   variants={slideVariants}
                   initial="hidden"
                   animate="visible"
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg mx-2">
+                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg mx-2">
                     <Image
                       src={src}
                       alt={`Gallery image ${idx + 1}`}
                       fill
                       style={{ objectFit: 'cover' }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 </motion.div>

@@ -233,17 +233,43 @@ const products: Product[] = [
 ];
 
 const Products: React.FC = () => {
+  const t = useTranslations('product');
   return (
     <section className="bg-gray-50 py-12 sm:py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl lg:text-5xl mb-10 text-center">
-          Unsere Produkte
+          Our Products
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+
+        {/* Customization Footer Banner - NEW DESIGN */}
+        <div className="mt-24 w-full max-w-5xl mx-auto">
+          <div className="bg-zinc-800 rounded-2xl shadow-lg p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-white text-center md:text-left">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-2">
+                  {t('customTitle')}
+                </h3>
+                <p className="text-white/80 max-w-lg">
+                  {t('customDescription')}
+                </p>
+              </div>
+              <div className="flex-shrink-0 mt-4 md:mt-0">
+                <a
+                  href="#contact"
+                  className="inline-block bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300"
+                >
+                  {t('customButton')}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

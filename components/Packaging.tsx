@@ -12,10 +12,12 @@ const Packaging: React.FC = () => {
           {t('title')}
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Changed items-start to items-center for better vertical alignment */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Master Box Section */}
           <div className="flex flex-col items-center text-center">
-            <div className="relative h-80 w-full max-w-md mb-6 bg-gray-100 rounded-lg">
+            {/* Increased container size for the Master Box image */}
+            <div className="relative h-96 w-full max-w-lg mb-6 bg-gray-100 rounded-lg">
               <Image
                 src="/packaging/masterbox.webp"
                 alt={t('masterAlt')}
@@ -37,7 +39,8 @@ const Packaging: React.FC = () => {
 
           {/* Inner Box Section */}
           <div className="flex flex-col items-center text-center">
-            <div className="relative h-80 w-full max-w-md mb-6 bg-gray-100 rounded-lg">
+            {/* Decreased container size for the Inner Box for contrast */}
+            <div className="relative h-72 w-full max-w-sm mb-6 bg-gray-100 rounded-lg">
               <Image
                 src="/packaging/innerbox.webp"
                 alt={t('innerAlt')}
@@ -57,17 +60,27 @@ const Packaging: React.FC = () => {
         </div>
 
         {/* Customization Footer Banner */}
-        <div className="mt-24 text-center bg-zinc-800 text-white p-8 rounded-lg shadow-lg">
-          <p className="text-xl font-semibold leading-relaxed max-w-3xl mx-auto">
-            {t('customizationText')}{' '}
-            <a
-              href="#contact"
-              className="font-bold text-brand-orange hover:underline"
-            >
-              {t('customizationContact')}
-            </a>{' '}
-            {t('customizationSuffix')}
-          </p>
+        <div className="mt-24 w-full max-w-5xl mx-auto">
+          <div className="bg-zinc-800 rounded-2xl shadow-lg p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-white text-center md:text-left">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-2">
+                  Need Custom Packaging?
+                </h3>
+                <p className="text-white/80 max-w-lg">
+                  {t('customizationText')} {t('customizationSuffix')}
+                </p>
+              </div>
+              <div className="flex-shrink-0 mt-4 md:mt-0">
+                <a
+                  href="#contact"
+                  className="inline-block bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300"
+                >
+                  {t('customizationContact')}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
