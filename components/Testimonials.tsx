@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const StarIcon = () => (
   <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -6,12 +9,19 @@ const StarIcon = () => (
   </svg>
 );
 
-const TestimonialCard = ({ quote, author, location }: { quote: string, author: string, location: string }) => (
+type TestimonialCardProps = {
+  quote: string;
+  author: string;
+  location: string;
+};
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, location }) => (
   <div className="bg-white p-8 rounded-lg shadow-md flex flex-col h-full text-left">
     <div className="flex mb-4">
-      {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
+      {[...Array(5)].map((_, index) => (
+        <StarIcon key={index} />
+      ))}
     </div>
-    {/* This line has been fixed */}
     <p className="text-gray-600 mb-6 flex-grow">&ldquo;{quote}&rdquo;</p>
     <div>
       <p className="font-bold text-gray-900">{author}</p>
@@ -20,31 +30,16 @@ const TestimonialCard = ({ quote, author, location }: { quote: string, author: s
   </div>
 );
 
-
 const Testimonials: React.FC = () => {
-  const testimonials = [
-    {
-      quote: "The quality of the charcoal is outstanding. Consistent heat and long burning time. Our customers are very satisfied.",
-      author: "Ahmed R.",
-      location: "Dubai, UAE"
-    },
-    {
-      quote: "Excellent communication and reliable shipping. Indo Charcoal Supply is a trustworthy partner for our business.",
-      author: "Michael B.",
-      location: "Berlin, Germany"
-    },
-    {
-      quote: "We were impressed with the custom packaging options. It really helped our brand stand out in a competitive market.",
-      author: "Fatima K.",
-      location: "Jeddah, Saudi Arabia"
-    }
-  ];
+  const t = useTranslations('testimonialsSection');
+
+  const testimonials = t.raw('testimonialList') as TestimonialCardProps[];
 
   return (
-    <section id="testimonials" className="bg-gray-50 py-24 sm:py-32">
+    <section id={t('sectionId')} className="bg-gray-50 py-24 sm:py-32">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-12">
-          What Our Clients Say
+          {t('title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {testimonials.map((testimonial, index) => (

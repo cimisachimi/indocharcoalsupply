@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-
+import { useTranslations } from 'next-intl';
 const TeamMemberCard = ({ imageSrc, name, role }: { imageSrc: string, name: string, role: string }) => (
   <div className="text-center">
     <div className="relative h-48 w-48 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 shadow-lg">
@@ -15,6 +15,8 @@ const TeamMemberCard = ({ imageSrc, name, role }: { imageSrc: string, name: stri
 );
 
 const OurTeam: React.FC = () => {
+  const t = useTranslations('team'); // 👈 Namespace "team"
+
   const teamMembers = [
     {
       imageSrc: "/team-image/member1.webp",

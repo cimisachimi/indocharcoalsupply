@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { useTranslations } from 'next-intl';
 const images = [
   '/gallery/gallery1.webp',
   '/gallery/gallery2.webp',
@@ -14,6 +14,9 @@ const images = [
 ];
 
 const GallerySlider: React.FC = () => {
+
+  const t = useTranslations('gallery'); // 👈 namespace "gallery"
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [current, setCurrent] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
@@ -60,7 +63,7 @@ const GallerySlider: React.FC = () => {
     <section className="bg-gray-900 w-full py-24 sm:py-32">
       <div className="container mx-auto max-w-6xl px-4">
         <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl lg:text-5xl text-center mb-12">
-          Company Gallery
+          {t('title')}
         </h2>
 
         <div className="relative">

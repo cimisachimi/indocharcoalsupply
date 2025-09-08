@@ -1,15 +1,18 @@
+'use client';
 import React from 'react';
 import Logo from './ui/Logo';
+import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
-  // You can reuse the navLinks from your Navbar component or define them here
+  const t = useTranslations('footer');
+
   const footerLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#product', label: 'Product' },
-    { href: '#our-values', label: 'Our Values' },
-    { href: '#product-profile', label: 'Product Profile' },
-    { href: '#packaging', label: 'Packaging' },
-    { href: '#shipping', label: 'Shipping' },
+    { href: '#home', label: t('links.home') },
+    { href: '#product', label: t('links.product') },
+    { href: '#our-values', label: t('links.ourValues') },
+    { href: '#product-profile', label: t('links.productProfile') },
+    { href: '#packaging', label: t('links.packaging') },
+    { href: '#shipping', label: t('links.shipping') },
   ];
 
   return (
@@ -21,18 +24,23 @@ const Footer: React.FC = () => {
             <div className="flex justify-center md:justify-start mb-4">
               <Logo />
             </div>
-            <p className="text-sm">
-              Established in 2021 with a strong commitment to providing the best, fastest, and most reliable services in the charcoal briquette industry.
-            </p>
+            <p className="text-sm">{t('about')}</p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="font-bold text-white mb-4 uppercase tracking-wider">Quick Links</h3>
+            <h3 className="font-bold text-white mb-4 uppercase tracking-wider">
+              {t('quickLinks')}
+            </h3>
             <ul className="space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="hover:text-white transition-colors">{link.label}</a>
+                  <a
+                    href={link.href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -40,22 +48,37 @@ const Footer: React.FC = () => {
 
           {/* Column 3: Contact Info */}
           <div>
-            <h3 className="font-bold text-white mb-4 uppercase tracking-wider">Contact Us</h3>
+            <h3 className="font-bold text-white mb-4 uppercase tracking-wider">
+              {t('contactUs')}
+            </h3>
             <ul className="space-y-3 text-sm">
-              {/* TODO: Replace with your address */}
-              <li>71 Magelang Street, Sleman, Yogyakarta, Indonesia</li>
-              {/* TODO: Replace with your email */}
-              <li><a href="mailto:contact@indocharcoalsupply.com" className="hover:text-white">briquettesupplier@gmail.com</a></li>
-              {/* TODO: Replace with your phone number */}
-              <li><a href="tel:+621234567890" className="hover:text-white">+62 896-8719-9099</a></li>
+              <li>{t('address')}</li>
+              <li>
+                <a
+                  href="mailto:briquettesupplier@gmail.com"
+                  className="hover:text-white"
+                >
+                  briquettesupplier@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+6289687199099"
+                  className="hover:text-white"
+                >
+                  +62 896-8719-9099
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Column 4: Social Media */}
-          {/* Column 4: Social Media */}
           <div>
-            <h3 className="font-bold text-white mb-4 uppercase tracking-wider">Follow Us</h3>
+            <h3 className="font-bold text-white mb-4 uppercase tracking-wider">
+              {t('followUs')}
+            </h3>
             <div className="flex justify-center md:justify-start space-x-4">
+              {/* Same icons */}
               <a
                 href="https://www.facebook.com/profile.php?id=61570964318471"
                 aria-label="Facebook"
@@ -85,20 +108,18 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-
         </div>
       </div>
 
-      {/* Bottom Bar with Copyright */}
+      {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container mx-auto px-6 py-4 text-center text-sm">
-          &copy; {new Date().getFullYear()} Indo Charcoal Supply. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Indo Charcoal Supply. {t('rights')}
         </div>
       </div>
     </footer>
   );
 };
-
 // Social Media SVG Icons
 const FacebookIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" /></svg>

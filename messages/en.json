@@ -81,5 +81,53 @@
     "customizationText": "Our master boxes can be customized to feature your logo and branding.",
     "customizationContact": "Contact us",
     "customizationSuffix": "to discuss your custom design needs."
+  },
+  "testimonialsSection": {
+    "sectionId": "testimonialsSection",
+    "title": "What Our Clients Say",
+    "testimonialList": [
+      {
+        "quote": "The quality of the charcoal is outstanding. Consistent heat and long burning time. Our customers are very satisfied.",
+        "author": "Ahmed R.",
+        "location": "Dubai, UAE"
+      },
+      {
+        "quote": "Excellent communication and reliable shipping. Indo Charcoal Supply is a trustworthy partner for our business.",
+        "author": "Michael B.",
+        "location": "Berlin, Germany"
+      },
+      {
+        "quote": "We were impressed with the custom packaging options. It really helped our brand stand out in a competitive market.",
+        "author": "Fatima K.",
+        "location": "Jeddah, Saudi Arabia"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Company Gallery"
+  },
+  "footer": {
+    "about": "Established in 2021 with a strong commitment to providing the best, fastest, and most reliable services in the charcoal briquette industry.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "followUs": "Follow Us",
+    "address": "71 Magelang Street, Sleman, Yogyakarta, Indonesia",
+    "rights": "All Rights Reserved.",
+    "links": {
+      "home": "Home",
+      "product": "Product",
+      "ourValues": "Our Values",
+      "productProfile": "Product Profile",
+      "packaging": "Packaging",
+      "shipping": "Shipping"
+    }
+  },
+  "location": {
+    "title": "Our Location",
+    "ariaLabel": "View our location on Google Maps",
+    "iframeTitle": "Location Map Preview"
+  },
+  "team": {
+    "title": "Meet Our Team"
   }
 }
