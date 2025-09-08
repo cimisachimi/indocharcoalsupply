@@ -127,7 +127,7 @@ const ProductionProcess = () => {
                   <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-orange-100">
                     <Image
                       src={step.icon}
-                      alt={step.title}
+                      alt=""
                       width={24}
                       height={24}
                       className="filter invert-[39%] sepia-[98%] saturate-[2976%] hue-rotate-[359deg] brightness-[97%] contrast-[101%]"
@@ -169,7 +169,7 @@ const ProductionProcess = () => {
               <div className="w-20 h-20 flex items-center justify-center rounded-full bg-orange-100 mb-4">
                 <Image
                   src={step.icon}
-                  alt={step.title}
+                  alt=""
                   width={36}
                   height={36}
                   className="filter invert-[39%] sepia-[98%] saturate-[2976%] hue-rotate-[359deg] brightness-[97%] contrast-[101%]"

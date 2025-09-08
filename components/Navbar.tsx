@@ -66,6 +66,7 @@ const Navbar: React.FC = () => {
           countryCode={localeFlags[currentLocale] || 'US'}
           svg
           style={{ width: '1.1em', height: '1.1em' }}
+          aria-label={currentLocale}
         />
         <span className="uppercase">{currentLocale}</span>
         <svg
@@ -91,6 +92,7 @@ const Navbar: React.FC = () => {
                 countryCode={localeFlags[loc] || 'US'}
                 svg
                 style={{ width: '1.1em', height: '1.1em' }}
+                aria-label={loc}
               />
               <span className="uppercase">{loc}</span>
             </button>
