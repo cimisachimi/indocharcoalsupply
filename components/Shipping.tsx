@@ -34,7 +34,7 @@ const Shipping: React.FC = () => {
           {/* Column 1: Image */}
           <div className="transform transition-transform duration-300 hover:scale-105">
             <Image
-              src="/kontainer.png"
+              src="/idi.webp"
               width={600}
               height={400}
               alt={t('containerAlt')}

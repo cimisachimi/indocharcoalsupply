@@ -35,9 +35,9 @@ const VisionMission: React.FC = () => {
         {/* Penyelarasan item ke atas di desktop ('lg:items-start') dipertahankan */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-16 items-center lg:items-start">
 
-          <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[550px] rounded-3xl overflow-hidden shadow-lg">
+          <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[550px] rounded-3xl overflow-hidden ">
             <Image
-              src="/idi.webp"
+              src="/kontainer.png"
               alt="Glowing hookah charcoal in a metal holder"
               fill
               style={{ objectFit: 'cover' }}
