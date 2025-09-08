@@ -1,4 +1,13 @@
 {
+  "navbar": {
+    "home": "Home",
+    "ourValues": "Our Values",
+    "product": "Product",
+    "packaging": "Packaging",
+    "shipping": "Shipping",
+    "ourTeam": "Our Team",
+    "contact": "Contact"
+  },
   "hero": {
     "catalog": "Download Catalogue",
     "contact": "Contact Us",

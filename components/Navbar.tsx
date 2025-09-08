@@ -6,6 +6,7 @@ import NavLink from './ui/Navlink';
 import { usePathname, useRouter } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import ReactCountryFlag from 'react-country-flag';
+import { useTranslations } from 'next-intl';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -15,14 +16,16 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
   const router = useRouter();
 
+  const t = useTranslations('navbar'); // 👈 namespace for navbar
+
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#product', label: 'Product' },
-    { href: '#our-values', label: 'Our Values' },
-    { href: '#packaging', label: 'Packaging' },
-    { href: '#shipping', label: 'Shipping' },
-    { href: '#our-team', label: 'Our Team' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#home', label: t('home') },
+    { href: '#our-values', label: t('ourValues') },
+    { href: '#product', label: t('product') },
+    { href: '#packaging', label: t('packaging') },
+    { href: '#shipping', label: t('shipping') },
+    { href: '#our-team', label: t('ourTeam') },
+    { href: '#contact', label: t('contact') },
   ];
 
   const localeFlags: Record<string, string> = {
@@ -41,7 +44,6 @@ const Navbar: React.FC = () => {
     setIsLangOpen(false);
   };
 
-  // Tutup dropdown jika klik di luar
   React.useEffect(() => {
     const onClickOutside = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -103,7 +105,7 @@ const Navbar: React.FC = () => {
       className="fixed top-0 left-0 w-full z-50 h-16 lg:h-20 bg-zinc-900/90 backdrop-blur-md shadow-lg
                  transition-colors duration-300 ease-in-out
                  rounded-b-[28px] md:rounded-b-[40px] lg:rounded-b-[48px]
-                 overflow-visible"  /* pastikan dropdown tidak terpotong */
+                 overflow-visible"
     >
       <div className="container relative mx-auto flex h-full items-center justify-between px-6">
         <Logo />
@@ -112,7 +114,7 @@ const Navbar: React.FC = () => {
         <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex z-[55]">
           <ul className="flex items-center space-x-10 text-base font-medium">
             {navLinks.map((link) => (
-              <NavLink key={link.label} href={link.href}>
+              <NavLink key={link.href} href={link.href}>
                 {link.label}
               </NavLink>
             ))}
@@ -150,7 +152,7 @@ const Navbar: React.FC = () => {
         <nav className="lg:hidden bg-zinc-900/95 pb-4 mt-2 shadow-lg rounded-b-2xl z-[55]">
           <ul className="flex flex-col items-center space-y-4">
             {navLinks.map((link) => (
-              <NavLink key={link.label} href={link.href}>
+              <NavLink key={link.href} href={link.href}>
                 {link.label}
               </NavLink>
             ))}

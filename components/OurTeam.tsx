@@ -39,7 +39,7 @@ const OurTeam: React.FC = () => {
     <section id="our-team" className="bg-white py-24 sm:py-32">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-16">
-          Meet Our Team
+          {t('title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {teamMembers.map((member, index) => (
