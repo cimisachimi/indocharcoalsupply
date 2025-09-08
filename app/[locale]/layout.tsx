@@ -11,6 +11,10 @@ import "./globals.css";
 //COMPONENTS
 import ContactBubble from "@/components/ContactBubble";
 
+// app/[locale]/layout.tsx atau komponen Swiper kamu
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 
 
