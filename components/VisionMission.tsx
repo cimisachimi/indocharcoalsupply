@@ -24,6 +24,8 @@ const InfoCard = ({ icon, title, children }: { icon: React.ReactNode, title: str
 
 const VisionMission: React.FC = () => {
   const t = useTranslations('vision')
+  //adadada
+  
 
 
   return (
