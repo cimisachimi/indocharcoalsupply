@@ -43,24 +43,49 @@ const Footer: React.FC = () => {
             <h3 className="font-bold text-white mb-4 uppercase tracking-wider">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               {/* TODO: Replace with your address */}
-              <li>123 Charcoal Street, Yogyakarta, Indonesia</li>
+              <li>71 Magelang Street, Sleman, Yogyakarta, Indonesia</li>
               {/* TODO: Replace with your email */}
-              <li><a href="mailto:contact@indocharcoalsupply.com" className="hover:text-white">contact@indocharcoalsupply.com</a></li>
+              <li><a href="mailto:contact@indocharcoalsupply.com" className="hover:text-white">briquettesupplier@gmail.com</a></li>
               {/* TODO: Replace with your phone number */}
-              <li><a href="tel:+621234567890" className="hover:text-white">+62 123 4567 890</a></li>
+              <li><a href="tel:+621234567890" className="hover:text-white">+62 896-8719-9099</a></li>
             </ul>
           </div>
 
           {/* Column 4: Social Media */}
+          {/* Column 4: Social Media */}
           <div>
             <h3 className="font-bold text-white mb-4 uppercase tracking-wider">Follow Us</h3>
             <div className="flex justify-center md:justify-start space-x-4">
-              {/* TODO: Replace '#' with your actual social media links */}
-              <a href="#" aria-label="Facebook" className="hover:text-white"><FacebookIcon /></a>
-              <a href="#" aria-label="Instagram" className="hover:text-white"><InstagramIcon /></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-white"><LinkedInIcon /></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61570964318471"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                <FacebookIcon />
+              </a>
+              <a
+                href="https://www.instagram.com/indocharcoalsupply"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/adam-billah-144b78342/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                <LinkedInIcon />
+              </a>
             </div>
           </div>
+
         </div>
       </div>
 

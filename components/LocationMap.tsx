@@ -21,6 +21,7 @@ const LocationMap: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="block overflow-hidden rounded-xl shadow-lg border border-gray-200 w-full h-[450px]"
+          aria-label="View our location on Google Maps"
         >
           <iframe
             src={mapSrc}
@@ -29,6 +30,7 @@ const LocationMap: React.FC = () => {
             style={{ border: 0, pointerEvents: "none" }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Location Map Preview"
           />
         </a>
       </div>

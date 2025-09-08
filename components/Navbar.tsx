@@ -15,9 +15,10 @@ const Navbar: React.FC = () => {
     { href: '#home', label: 'Home' },
     { href: '#product', label: 'Product' },
     { href: '#our-values', label: 'Our Values' },
-    { href: '#product-profile', label: 'Product Profile' },
     { href: '#packaging', label: 'Packaging' },
     { href: '#shipping', label: 'Shipping' },
+    { href: '#our-team', label: 'Our Team' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   // Extract current locale from pathname (/en, /nl, etc.)
@@ -55,6 +56,7 @@ const Navbar: React.FC = () => {
             value={currentLocale}
             onChange={(e) => changeLocale(e.target.value)}
             className="bg-zinc-800 text-white rounded-md px-2 py-1 text-sm border border-zinc-600"
+            aria-label="Select language"
           >
             {routing.locales.map((loc) => (
               <option key={loc} value={loc}>
@@ -122,6 +124,7 @@ const Navbar: React.FC = () => {
                 value={currentLocale}
                 onChange={(e) => changeLocale(e.target.value)}
                 className="bg-zinc-800 text-white rounded-md px-2 py-1 text-sm border border-zinc-600"
+                aria-label="Select language"
               >
                 {routing.locales.map((loc) => (
                   <option key={loc} value={loc}>

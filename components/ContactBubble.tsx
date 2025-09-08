@@ -5,9 +5,9 @@ import React, { useState } from 'react';
 const ContactBubble: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // --- IMPORTANT: Replace these with your actual contact details ---
-  const whatsappNumber = "6281234567890"; // Use your full number with country code, no "+" or spaces
-  const emailAddress = "contact@indocharcoalsupply.com";
+  // --- Using the updated contact details ---
+  const whatsappNumber = "6289687199099";
+  const emailAddress = "briquettesupplier@gmail.com";
   const whatsappMessage = "Hello, I'm interested in your charcoal products for consultation or purchase.";
 
   return (
@@ -36,6 +36,8 @@ const ContactBubble: React.FC = () => {
           {/* Email Link */}
           <a
             href={`mailto:${emailAddress}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-gray-600 text-white shadow-lg hover:bg-gray-700"
             aria-label="Contact via Email"
           >
