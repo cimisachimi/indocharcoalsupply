@@ -6,18 +6,23 @@ const Packaging: React.FC = () => {
   const t = useTranslations('packaging');
 
   return (
-    <section id="packaging" className="bg-white py-24 sm:py-32">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl text-center mb-16">
+    <section id="packaging" className="bg-gradient-to-br from-gray-50 to-white py-24 sm:py-32 relative overflow-hidden">
+      {/* Background Shapes for Visual Interest (Optional, but adds a modern touch) */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-brand-orange/5 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-blue-300/5 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-purple-300/5 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+
+
+      <div className="container mx-auto px-6 relative z-10"> {/* Added relative z-10 to ensure content is above background shapes */}
+        <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 text-center mb-16 sm:mb-20 leading-tight">
           {t('title')}
+          <span className="block text-brand-orange text-2xl lg:text-3xl font-semibold mt-3">Your Brand, Our Packaging</span>
         </h2>
 
-        {/* Changed items-start to items-center for better vertical alignment */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-20 items-stretch"> {/* Changed items-center to items-stretch */}
           {/* Master Box Section */}
-          <div className="flex flex-col items-center text-center">
-            {/* Increased container size for the Master Box image */}
-            <div className="relative h-96 w-full max-w-lg mb-6 bg-gray-100 rounded-lg">
+          <div className="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="relative h-96 w-full max-w-lg mb-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center p-6 border border-gray-100">
               <Image
                 src="/packaging/masterbox.webp"
                 alt={t('masterAlt')}
@@ -26,21 +31,20 @@ const Packaging: React.FC = () => {
                 className="p-8"
               />
             </div>
-            <h3 className="text-2xl font-bold text-brand-orange mb-4">{t('masterTitle')}</h3>
-            <p className="text-gray-600 mb-6 max-w-md">{t('masterDescription')}</p>
-            <h4 className="font-semibold text-gray-800 mb-3">{t('masterAvailable')}</h4>
-            <ul className="flex justify-center gap-x-6 gap-y-2 flex-wrap text-lg">
-              <li className="font-medium text-gray-700">{t('masterSize10')}</li>
-              <li className="font-medium text-gray-700">{t('masterSize12')}</li>
-              <li className="font-medium text-gray-700">{t('masterSize15')}</li>
-              <li className="font-medium text-gray-700">{t('masterSize20')}</li>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">{t('masterTitle')}</h3>
+            <p className="text-gray-600 mb-6 max-w-md leading-relaxed">{t('masterDescription')}</p>
+            <h4 className="font-semibold text-gray-700 text-xl mb-4">{t('masterAvailable')}</h4>
+            <ul className="flex justify-center gap-x-8 gap-y-3 flex-wrap text-lg font-medium text-gray-700">
+              <li className="bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('masterSize10')}</li>
+              <li className="bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('masterSize12')}</li>
+              <li className="bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('masterSize15')}</li>
+              <li className="bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('masterSize20')}</li>
             </ul>
           </div>
 
           {/* Inner Box Section */}
-          <div className="flex flex-col items-center text-center">
-            {/* Decreased container size for the Inner Box for contrast */}
-            <div className="relative h-72 w-full max-w-sm mb-6 bg-gray-100 rounded-lg">
+          <div className="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="relative h-72 w-full max-w-sm mb-8 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center p-6 border border-gray-100">
               <Image
                 src="/packaging/innerbox.webp"
                 alt={t('innerAlt')}
@@ -49,34 +53,34 @@ const Packaging: React.FC = () => {
                 className="p-8"
               />
             </div>
-            <h3 className="text-2xl font-bold text-brand-orange mb-4">{t('innerTitle')}</h3>
-            <p className="text-gray-600 mb-6 max-w-md">{t('innerDescription')}</p>
-            <h4 className="font-semibold text-gray-800 mb-3">{t('innerAvailable')}</h4>
-            <ul className="flex justify-center gap-x-6 gap-y-2 flex-wrap text-lg">
-              <li className="font-medium text-gray-700">{t('innerSize1to2')}</li>
-              <li className="font-medium text-gray-700">{t('innerSize250to500')}</li>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">{t('innerTitle')}</h3>
+            <p className="text-gray-600 mb-6 max-w-md leading-relaxed">{t('innerDescription')}</p>
+            <h4 className="font-semibold text-gray-700 text-xl mb-4">{t('innerAvailable')}</h4>
+            <ul className="flex justify-center gap-x-8 gap-y-3 flex-wrap text-lg font-medium text-gray-700">
+              <li className="bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('innerSize1to2')}</li>
+              <li className="bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform">{t('innerSize250to500')}</li>
             </ul>
           </div>
         </div>
 
         {/* Customization Footer Banner */}
-        <div className="mt-24 w-full max-w-5xl mx-auto">
-          <div className="bg-zinc-800 rounded-2xl shadow-lg p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-white text-center md:text-left">
-                <h3 className="text-2xl lg:text-3xl font-bold mb-2">
-                  Need Custom Packaging?
+        <div className="mt-28 w-full max-w-6xl mx-auto"> {/* Increased top margin, max-width */}
+          <div className="bg-zinc-800 rounded-3xl shadow-2xl p-8 md:p-14 transform hover:scale-105 transition-transform duration-300 ease-in-out"> {/* More prominent shadow, rounded, and hover effect */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-10"> {/* Increased gap */}
+              <div className="text-white text-center md:text-left max-w-2xl">
+                <h3 className="text-3xl lg:text-4xl font-extrabold mb-3 leading-tight">
+                      Need Custom Packaging?
                 </h3>
-                <p className="text-white/80 max-w-lg">
+                <p className="text-white/80 text-lg leading-relaxed">
                   {t('customizationText')} {t('customizationSuffix')}
                 </p>
               </div>
-              <div className="flex-shrink-0 mt-4 md:mt-0">
+              <div className="flex-shrink-0">
                 <a
                   href="#contact"
-                  className="inline-block bg-brand-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-opacity duration-300"
+                  className="inline-block bg-brand-orange text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  {t('customizationContact')}
+                  {t('customizationContact') || 'Contact us'} {/* Fallback for translation */}
                 </a>
               </div>
             </div>

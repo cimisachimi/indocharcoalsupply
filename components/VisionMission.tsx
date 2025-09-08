@@ -37,7 +37,7 @@ const VisionMission: React.FC = () => {
 
           <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[550px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/3vision.webp"
+              src="/idi.webp"
               alt="Glowing hookah charcoal in a metal holder"
               fill
               style={{ objectFit: 'cover' }}
