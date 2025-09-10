@@ -19,6 +19,7 @@
     "testimonie": "お客様の声"
   },
   "values": {
+    "ourValue": "私たちの価値観",
     "integrityDescription": "私たちは、事業のあらゆる側面において、誠実さ、倫理観、透明性をもってビジネスを行うことをお約束します。",
     "integrityTitle": "誠実さ",
     "qualityTitle": "品質",
@@ -63,6 +64,30 @@
     "customDescription": "お客様のブランドアイデンティティを内外に反映する、カスタム形状・サイズのブリケットを共同でデザインいたします。",
     "customButton": "お問い合わせ"
   },
+  "prodProcess": {
+    "title": "生産プロセス",
+    "description": "当社のココナッツチャコールブリケットは、最高の品質と持続可能性を保証する綿密なプロセスを経て作られています。以下に生産工程の内訳を示します。",
+    "sourcingTitle": "調達と選定",
+    "sourcingDescription": "持続可能なプランテーションから最高級のココナッツの殻を調達することから始めます。品質と純度を考慮して慎重に選ばれています。",
+    "dryingTitle": "乾燥",
+    "dryingDescription": "ココナッツの殻を乾燥させて水分含有量を減らし、効率的な炭化と高品質のブリケットを確保します。",
+    "carbonizationTitle": "炭化",
+    "carbonizationDescription": "殻は管理された温度と酸素条件下で窯で炭化され、高炭素の木炭が生成されます。",
+    "crushingTitle": "粉砕と選別",
+    "crushingDescription": "木炭を粉砕・選別して均一な粒子サイズにし、燃焼特性を最適化します。",
+    "mixingTitle": "混合と結合",
+    "mixingDescription": "木炭はデンプンや粘土などの天然結合剤と混合され、ブリケットを固めます。",
+    "moldingTitle": "成形とプレス",
+    "moldingDescription": "混合物は金型にプレスされます。圧力によってブリケットの密度と耐久性が決まります。",
+    "finalDryingTitle": "最終乾燥",
+    "finalDryingDescription": "成形されたブリケットは再度乾燥され、残りの水分を取り除き、包装の準備が整います。",
+    "qualityControlTitle": "品質管理",
+    "qualityControlDescription": "各バッチは、密度、灰分、水分、燃焼時間など、厳格な品質チェックを受けます。",
+    "packagingTitle": "包装",
+    "packagingDescription": "完成したブリケットは、輸送中および保管中の保護のために慎重に包装されます。",
+    "storageTitle": "保管",
+    "storageDescription": "ブリケットは、直射日光や熱を避け、乾燥した換気の良い場所に保管する必要があります。"
+  },
   "shipping": {
     "containerAlt": "Indo Charcoal Supplyの輸送コンテナ",
     "aboutTitle": "配送について",
@@ -73,6 +98,7 @@
   },
   "packaging": {
     "title": "パッケージングオプション",
+    "yourBrandourPackaging": "あなたのブランド、私たちのパッケージ",
     "masterAlt": "マスターボックス",
     "masterTitle": "マスターボックス",
     "masterDescription": "この大きなマスターボックスは、輸送および保管中にお客様のチャコールブリケットを保持・保護するために設計されています。",
@@ -87,6 +113,7 @@
     "innerAvailable": "対応サイズ：",
     "innerSize1to2": "1 - 2 kg",
     "innerSize250to500": "250 - 500 g",
+    "customPackagingTitle": "カスタム包装が必要ですか？",
     "customizationText": "マスターボックスは、お客様のロゴやブランディングに合わせてカスタマイズ可能です。",
     "customizationContact": "こちらからお問い合わせの上",
     "customizationSuffix": "カスタムデザインのご要望についてご相談ください。"

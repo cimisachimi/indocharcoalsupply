@@ -19,6 +19,7 @@
     "testimonie": "Recensie"
   },
   "values": {
+    "ourValue": "Onze waarden",
     "integrityDescription": "Wij zetten ons in om in elk aspect van onze bedrijfsvoering eerlijk, ethisch en transparant te handelen.",
     "integrityTitle": "Integriteit",
     "qualityTitle": "Kwaliteit",
@@ -63,6 +64,30 @@
     "customDescription": "Werk met ons samen om aangepaste briketvormen en -maten te ontwerpen die uw merkidentiteit weerspiegelen.",
     "customButton": "Neem Contact Op"
   },
+  "prodProcess": {
+    "title": "PRODUCTIEPROCES",
+    "description": "Onze kokosnoot houtskoolbriketten worden vervaardigd via een zorgvuldig proces dat de hoogste kwaliteit en duurzaamheid garandeert. Hier is een overzicht van onze productiestappen:",
+    "sourcingTitle": "Inkoop en Selectie",
+    "sourcingDescription": "We beginnen met het inkopen van de beste kokosnootschillen van duurzame plantages. Zorgvuldig geselecteerd op kwaliteit en zuiverheid.",
+    "dryingTitle": "Drogen",
+    "dryingDescription": "De kokosnootschillen worden gedroogd om het vochtgehalte te verminderen, wat zorgt voor een efficiënte carbonisatie en briketten van hoge kwaliteit.",
+    "carbonizationTitle": "Carbonisatie",
+    "carbonizationDescription": "De schillen worden gecarboniseerd in ovens onder gecontroleerde temperatuur en zuurstofomstandigheden, waardoor koolstofrijke houtskool ontstaat.",
+    "crushingTitle": "Verpletteren en Zeven",
+    "crushingDescription": "De houtskool wordt verpletterd en gezeefd om een uniforme deeltjesgrootte te bereiken, wat de brandeigenschappen optimaliseert.",
+    "mixingTitle": "Mengen en Binden",
+    "mixingDescription": "De houtskool wordt gemengd met natuurlijke bindmiddelen zoals zetmeel of klei om de briketten bij elkaar te houden.",
+    "moldingTitle": "Vormen en Persen",
+    "moldingDescription": "Het mengsel wordt in mallen geperst. De druk bepaalt de dichtheid en duurzaamheid van de briket.",
+    "finalDryingTitle": "Einddrogen",
+    "finalDryingDescription": "De gevormde briketten worden opnieuw gedroogd om restvocht te verwijderen, klaar voor verpakking.",
+    "qualityControlTitle": "Kwaliteitscontrole",
+    "qualityControlDescription": "Elke partij ondergaat strenge kwaliteitscontroles: dichtheid, asgehalte, vocht en brandduur.",
+    "packagingTitle": "Verpakking",
+    "packagingDescription": "De afgewerkte briketten worden zorgvuldig verpakt om ze te beschermen tijdens transport en opslag.",
+    "storageTitle": "Opslag",
+    "storageDescription": "Briketten moeten worden opgeslagen op een droge, geventileerde plaats, uit de buurt van direct zonlicht en hitte."
+  },
   "shipping": {
     "containerAlt": "Verzendcontainer van Indo Charcoal Supply",
     "aboutTitle": "OVER VERZENDING",
@@ -73,6 +98,7 @@
   },
   "packaging": {
     "title": "Verpakkingsopties",
+    "yourBrandourPackaging": "Uw merk, onze verpakking",
     "masterAlt": "Omdoos",
     "masterTitle": "OMDOOS",
     "masterDescription": "Deze grote omdoos is ontworpen om uw houtskoolbriketten te bevatten en te beschermen tijdens verzending en opslag.",
@@ -87,13 +113,14 @@
     "innerAvailable": "Verkrijgbare maten:",
     "innerSize1to2": "1 - 2 kg",
     "innerSize250to500": "250 - 500 g",
+    "customPackagingTitle": "Heeft u aangepaste verpakkingen nodig?",
     "customizationText": "Onze omdozen kunnen worden aangepast met uw logo en huisstijl.",
     "customizationContact": "Neem contact met ons op",
     "customizationSuffix": "om uw wensen voor een aangepast ontwerp te bespreken."
   },
   "testimonialsSection": {
     "sectionId": "testimonialsSection",
-    "title": "What Our Clients Say",
+    "title": "Wat onze klanten zeggen",
     "testimonialList": [
       {
         "quote": "The quality of the charcoal is outstanding. Consistent heat and long burning time. Our customers are very satisfied.",

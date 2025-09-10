@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-
-
+import { useTranslations } from 'next-intl';
 
 const ChevronDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg viewBox="0 0 24 24" fill="none" {...props}>
@@ -18,81 +17,72 @@ const ChevronDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   </svg>
 );
 
-
-const processSteps = [
-  {
-    id: "01",
-    icon: "/prod-icon/mount.svg",
-    title: "Sourcing and Selection",
-    description:
-      "We begin by sourcing the finest coconut shells from sustainable plantations. Carefully selected for quality and purity.",
-  },
-  {
-    id: "02",
-    icon: "/prod-icon/sun.svg",
-    title: "Drying",
-    description:
-      "The coconut shells are dried to reduce moisture content, ensuring efficient carbonization and high-quality briquettes.",
-  },
-  {
-    id: "03",
-    icon: "/prod-icon/bike.svg",
-    title: "Carbonization",
-    description:
-      "Shells are carbonized in kilns under controlled temperature and oxygen conditions, producing high-carbon charcoal.",
-  },
-  {
-    id: "04",
-    icon: "/prod-icon/double.svg",
-    title: "Crushing and Screening",
-    description:
-      "Charcoal is crushed and screened to achieve uniform particle size, optimizing burning properties.",
-  },
-  {
-    id: "05",
-    icon: "/prod-icon/mix.svg",
-    title: "Mixing and Binding",
-    description:
-      "The charcoal is mixed with natural binders like starch or clay to hold the briquettes together.",
-  },
-  {
-    id: "06",
-    icon: "/prod-icon/arrow.svg",
-    title: "Molding and Pressing",
-    description:
-      "The blend is pressed into molds. Pressure determines the briquette’s density and durability.",
-  },
-  {
-    id: "07",
-    icon: "/prod-icon/sun 2.svg",
-    title: "Final Drying",
-    description:
-      "The molded briquettes are dried again to remove residual moisture, ready for packaging.",
-  },
-  {
-    id: "08",
-    icon: "/prod-icon/shield.svg",
-    title: "Quality Control",
-    description:
-      "Each batch undergoes strict quality checks: density, ash, moisture, and burn duration.",
-  },
-  {
-    id: "09",
-    icon: "/prod-icon/package.svg",
-    title: "Packaging",
-    description:
-      "Finished briquettes are carefully packaged to protect them during transport and storage.",
-  },
-  {
-    id: "10",
-    icon: "/prod-icon/safe.svg",
-    title: "Storage",
-    description:
-      "Briquettes should be stored in a dry, ventilated place away from direct sunlight and heat.",
-  },
-];
-
 const ProductionProcess = () => {
+  const t = useTranslations('prodProcess');
+
+  const processSteps = [
+    {
+      id: "01",
+      icon: "/prod-icon/mount.svg",
+      title: t('sourcingTitle'),
+      description: t('sourcingDescription'),
+    },
+    {
+      id: "02",
+      icon: "/prod-icon/sun.svg",
+      title: t('dryingTitle'),
+      description: t('dryingDescription'),
+    },
+    {
+      id: "03",
+      icon: "/prod-icon/bike.svg",
+      title: t('carbonizationTitle'),
+      description: t('carbonizationDescription'),
+    },
+    {
+      id: "04",
+      icon: "/prod-icon/double.svg",
+      title: t('crushingTitle'),
+      description: t('crushingDescription'),
+    },
+    {
+      id: "05",
+      icon: "/prod-icon/mix.svg",
+      title: t('mixingTitle'),
+      description: t('mixingDescription'),
+    },
+    {
+      id: "06",
+      icon: "/prod-icon/arrow.svg",
+      title: t('moldingTitle'),
+      description: t('moldingDescription'),
+    },
+    {
+      id: "07",
+      icon: "/prod-icon/sun 2.svg",
+      title: t('finalDryingTitle'),
+      description: t('finalDryingDescription'),
+    },
+    {
+      id: "08",
+      icon: "/prod-icon/shield.svg",
+      title: t('qualityControlTitle'),
+      description: t('qualityControlDescription'),
+    },
+    {
+      id: "09",
+      icon: "/prod-icon/package.svg",
+      title: t('packagingTitle'),
+      description: t('packagingDescription'),
+    },
+    {
+      id: "10",
+      icon: "/prod-icon/safe.svg",
+      title: t('storageTitle'),
+      description: t('storageDescription'),
+    },
+  ];
+
   // State to manage which accordion item is open on mobile. Default to '01'.
   const [openStep, setOpenStep] = useState<string | null>("01");
 
@@ -105,12 +95,10 @@ const ProductionProcess = () => {
     <section className="bg-white text-gray-900 py-16 px-6">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#ff5328]">
-          PRODUCTION PROCESS
+          {t('title')}
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-          Our coconut charcoal briquettes are crafted through a meticulous
-          process that ensures the highest quality and sustainability. Here’s a
-          breakdown of our production steps:
+          {t('description')}
         </p>
 
         {/* =============================================================== */}

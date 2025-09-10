@@ -19,6 +19,7 @@
     "testimonie": "Témoignage"
   },
   "values": {
+    "ourValue": "Nos valeurs",
     "integrityDescription": "Nous nous engageons à mener nos activités avec honnêteté, éthique et transparence dans tous les aspects de nos opérations.",
     "integrityTitle": "Intégrité",
     "qualityTitle": "Qualité",
@@ -63,6 +64,30 @@
     "customDescription": "Associez-vous à nous pour concevoir des formes et des tailles de briquettes personnalisées qui reflètent votre identité de marque.",
     "customButton": "Nous Contacter"
   },
+  "prodProcess": {
+    "title": "PROCESSUS DE PRODUCTION",
+    "description": "Nos briquettes de charbon de coco sont fabriquées selon un processus méticuleux qui garantit la plus haute qualité et durabilité. Voici un aperçu de nos étapes de production :",
+    "sourcingTitle": "Approvisionnement et Sélection",
+    "sourcingDescription": "Nous commençons par nous approvisionner en coques de noix de coco de la meilleure qualité provenant de plantations durables. Soigneusement sélectionnées pour leur qualité et leur pureté.",
+    "dryingTitle": "Séchage",
+    "dryingDescription": "Les coques de noix de coco sont séchées pour réduire leur teneur en humidité, garantissant une carbonisation efficace et des briquettes de haute qualité.",
+    "carbonizationTitle": "Carbonisation",
+    "carbonizationDescription": "Les coques sont carbonisées dans des fours à température et conditions d'oxygène contrôlées, produisant un charbon à haute teneur en carbone.",
+    "crushingTitle": "Broyage et Tamisage",
+    "crushingDescription": "Le charbon est broyé et tamisé pour obtenir une granulométrie uniforme, optimisant les propriétés de combustion.",
+    "mixingTitle": "Mélange et Liage",
+    "mixingDescription": "Le charbon est mélangé à des liants naturels comme l'amidon ou l'argile pour maintenir les briquettes ensemble.",
+    "moldingTitle": "Moulage et Pressage",
+    "moldingDescription": "Le mélange est pressé dans des moules. La pression détermine la densité et la durabilité de la briquette.",
+    "finalDryingTitle": "Séchage Final",
+    "finalDryingDescription": "Les briquettes moulées sont à nouveau séchées pour éliminer l'humidité résiduelle, prêtes à être emballées.",
+    "qualityControlTitle": "Contrôle Qualité",
+    "qualityControlDescription": "Chaque lot subit des contrôles de qualité stricts : densité, teneur en cendres, humidité et durée de combustion.",
+    "packagingTitle": "Emballage",
+    "packagingDescription": "Les briquettes finies sont soigneusement emballées pour les protéger pendant le transport et le stockage.",
+    "storageTitle": "Stockage",
+    "storageDescription": "Les briquettes doivent être stockées dans un endroit sec et ventilé, à l'abri de la lumière directe du soleil et de la chaleur."
+  },
   "shipping": {
     "containerAlt": "Conteneur d'expédition d'Indo Charcoal Supply",
     "aboutTitle": "À PROPOS DE L'EXPÉDITION",
@@ -73,6 +98,7 @@
   },
   "packaging": {
     "title": "Options d'Emballage",
+    "yourBrandourPackaging": "Votre marque, notre emballage",
     "masterAlt": "Carton Principal",
     "masterTitle": "CARTON PRINCIPAL",
     "masterDescription": "Ce grand carton principal est conçu pour contenir et protéger vos briquettes de charbon de bois pendant l'expédition et le stockage.",
@@ -87,13 +113,14 @@
     "innerAvailable": "Tailles disponibles :",
     "innerSize1to2": "1 - 2 kg",
     "innerSize250to500": "250 - 500 g",
+    "customPackagingTitle": "Besoin d’un emballage personnalisé ?",
     "customizationText": "Nos cartons principaux peuvent être personnalisés pour arborer votre logo et votre marque.",
     "customizationContact": "Contactez-nous",
     "customizationSuffix": "pour discuter de vos besoins en matière de design personnalisé."
   },
   "testimonialsSection": {
     "sectionId": "testimonialsSection",
-    "title": "What Our Clients Say",
+    "title": "Ce que disent nos clients",
     "testimonialList": [
       {
         "quote": "The quality of the charcoal is outstanding. Consistent heat and long burning time. Our customers are very satisfied.",

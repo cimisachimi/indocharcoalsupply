@@ -19,6 +19,7 @@
     "testimonie": "客户评价"
   },
   "values": {
+    "ourValue": "我们的价值观",
     "integrityDescription": "我们承诺在运营的各个方面都秉持诚实、道德和透明的原则。",
     "integrityTitle": "诚信",
     "qualityTitle": "品质",
@@ -63,6 +64,30 @@
     "customDescription": "与我们合作，设计能体现您品牌形象的定制煤砖形状和尺寸。",
     "customButton": "联系我们"
   },
+  "prodProcess": {
+    "title": "生产过程",
+    "description": "我们的椰壳炭砖经过精心制作，确保最高的质量和可持续性。以下是我们的生产步骤分解：",
+    "sourcingTitle": "采购与筛选",
+    "sourcingDescription": "我们从可持续种植园采购最优质的椰子壳开始。精心挑选以确保质量和纯度。",
+    "dryingTitle": "干燥",
+    "dryingDescription": "椰子壳经过干燥以降低水分含量，确保高效的碳化和高质量的炭砖。",
+    "carbonizationTitle": "碳化",
+    "carbonizationDescription": "在受控的温度和氧气条件下，在窑中对壳进行碳化，生产高碳木炭。",
+    "crushingTitle": "破碎与筛选",
+    "crushingDescription": "将木炭破碎并筛选，以获得均匀的颗粒大小，优化燃烧性能。",
+    "mixingTitle": "混合与粘合",
+    "mixingDescription": "将木炭与淀粉或粘土等天然粘合剂混合，以将炭砖粘合在一起。",
+    "moldingTitle": "成型与压制",
+    "moldingDescription": "将混合物压入模具中。压力决定了炭砖的密度和耐久性。",
+    "finalDryingTitle": "最终干燥",
+    "finalDryingDescription": "成型的炭砖再次干燥，去除残留水分，准备包装。",
+    "qualityControlTitle": "质量控制",
+    "qualityControlDescription": "每批产品都经过严格的质量检查：密度、灰分、水分和燃烧持续时间。",
+    "packagingTitle": "包装",
+    "packagingDescription": "成品炭砖经过精心包装，以在运输和储存过程中保护它们。",
+    "storageTitle": "储存",
+    "storageDescription": "炭砖应存放在干燥、通风、避免阳光直射和高温的地方。"
+  },
   "shipping": {
     "containerAlt": "Indo Charcoal Supply 运输集装箱",
     "aboutTitle": "关于运输",
@@ -73,6 +98,7 @@
   },
   "packaging": {
     "title": "包装选项",
+    "yourBrandourPackaging": "您的品牌，我们的包装",
     "masterAlt": "外箱",
     "masterTitle": "外箱",
     "masterDescription": "这款大型外箱专为在运输和储存过程中容纳和保护您的煤砖而设计。",
@@ -87,13 +113,14 @@
     "innerAvailable": "可选尺寸：",
     "innerSize1to2": "1 - 2公斤",
     "innerSize250to500": "250 - 500克",
+    "customPackagingTitle": "需要定制包装吗？",
     "customizationText": "我们的外箱可以根据您的要求定制，印上您的徽标和品牌。",
     "customizationContact": "联系我们",
     "customizationSuffix": "，讨论您的定制设计需求。"
   },
   "testimonialsSection": {
     "sectionId": "testimonialsSection",
-    "title": "What Our Clients Say",
+    "title": "我们的客户怎么说",
     "testimonialList": [
       {
         "quote": "The quality of the charcoal is outstanding. Consistent heat and long burning time. Our customers are very satisfied.",

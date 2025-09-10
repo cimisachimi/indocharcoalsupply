@@ -21,7 +21,7 @@ const Packaging: React.FC = () => {
         <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 text-center mb-8 leading-tight">
           {t('title')}
           <span className="block mx-auto w-fit bg-brand-orange text-white text-base lg:text-lg font-semibold px-4 py-2 rounded-full mt-4">
-            Your Brand, Our Packaging
+            {t('yourBrandourPackaging')}
           </span>
         </h2>
 
@@ -77,7 +77,7 @@ const Packaging: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-white text-center md:text-left max-w-2xl">
                 <h3 className="text-3xl lg:text-4xl font-extrabold mb-3 leading-tight">
-                    Need Custom Packaging?
+                  {t('customPackagingTitle')}
                 </h3>
                 <p className="text-white/80 text-lg leading-relaxed">
                   {t('customizationText')} {t('customizationSuffix')}

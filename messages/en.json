@@ -19,6 +19,7 @@
     "testimonie": "Testimonies"
   },
   "values": {
+    "ourValue": "Our Value",
     "integrityDescription": "We are committed to conducting business with honesty, ethics and transparency in every aspect of our operations.",
     "integrityTitle": "Integrity",
     "qualityTitle": "Quality",
@@ -63,6 +64,30 @@
     "customDescription": "Partner with us to design custom briquette shapes and sizes that reflect your brand identity, inside and out.",
     "customButton": "Contact Us"
   },
+  "prodProcess": {
+    "title": "PRODUCTION PROCESS",
+    "description": "Our coconut charcoal briquettes are crafted through a meticulous process that ensures the highest quality and sustainability. Here’s a breakdown of our production steps:",
+    "sourcingTitle": "Sourcing and Selection",
+    "sourcingDescription": "We begin by sourcing the finest coconut shells from sustainable plantations. Carefully selected for quality and purity.",
+    "dryingTitle": "Drying",
+    "dryingDescription": "The coconut shells are dried to reduce moisture content, ensuring efficient carbonization and high-quality briquettes.",
+    "carbonizationTitle": "Carbonization",
+    "carbonizationDescription": "Shells are carbonized in kilns under controlled temperature and oxygen conditions, producing high-carbon charcoal.",
+    "crushingTitle": "Crushing and Screening",
+    "crushingDescription": "Charcoal is crushed and screened to achieve uniform particle size, optimizing burning properties.",
+    "mixingTitle": "Mixing and Binding",
+    "mixingDescription": "The charcoal is mixed with natural binders like starch or clay to hold the briquettes together.",
+    "moldingTitle": "Molding and Pressing",
+    "moldingDescription": "The blend is pressed into molds. Pressure determines the briquette’s density and durability.",
+    "finalDryingTitle": "Final Drying",
+    "finalDryingDescription": "The molded briquettes are dried again to remove residual moisture, ready for packaging.",
+    "qualityControlTitle": "Quality Control",
+    "qualityControlDescription": "Each batch undergoes strict quality checks: density, ash, moisture, and burn duration.",
+    "packagingTitle": "Packaging",
+    "packagingDescription": "Finished briquettes are carefully packaged to protect them during transport and storage.",
+    "storageTitle": "Storage",
+    "storageDescription": "Briquettes should be stored in a dry, ventilated place away from direct sunlight and heat."
+  },
   "shipping": {
     "containerAlt": "Indo Charcoal Supply Shipping Container",
     "aboutTitle": "ABOUT SHIPPING",
@@ -73,6 +98,7 @@
   },
   "packaging": {
     "title": "Packaging Options",
+    "yourBrandourPackaging": "Your Brand, Our Packaging",
     "masterAlt": "Master Box",
     "masterTitle": "MASTER BOX",
     "masterDescription": "This large master box is designed to hold and protect your charcoal briquettes during shipping and storage.",
@@ -87,6 +113,7 @@
     "innerAvailable": "Available sizes:",
     "innerSize1to2": "1 - 2 kg",
     "innerSize250to500": "250 - 500 gr",
+    "customPackagingTitle": "Need Custom Packaging?",
     "customizationText": "Our master boxes can be customized to feature your logo and branding.",
     "customizationContact": "Contact us",
     "customizationSuffix": "to discuss your custom design needs."

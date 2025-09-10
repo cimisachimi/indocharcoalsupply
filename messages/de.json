@@ -19,6 +19,7 @@
     "testimonie": "Kundenstimme"
   },
   "values": {
+    "ourValue": "Unsere Werte",
     "integrityDescription": "Wir verpflichten uns, unser Geschäft in allen Aspekten ehrlich, ethisch und transparent zu führen.",
     "integrityTitle": "Integrität",
     "qualityTitle": "Qualität",
@@ -63,6 +64,30 @@
     "customDescription": "Arbeiten Sie mit uns zusammen, um individuelle Brikettformen und -größen zu entwerfen, die Ihre Markenidentität widerspiegeln.",
     "customButton": "Kontaktieren Sie uns"
   },
+  "prodProcess": {
+    "title": "PRODUKTIONSPROZESS",
+    "description": "Unsere Kokosnuss-Holzkohlebriketts werden in einem sorgfältigen Prozess hergestellt, der höchste Qualität und Nachhaltigkeit gewährleistet. Hier ist eine Aufschlüsselung unserer Produktionsschritte:",
+    "sourcingTitle": "Beschaffung und Auswahl",
+    "sourcingDescription": "Wir beginnen mit der Beschaffung feinster Kokosnussschalen aus nachhaltigen Plantagen. Sorgfältig ausgewählt nach Qualität und Reinheit.",
+    "dryingTitle": "Trocknung",
+    "dryingDescription": "Die Kokosnussschalen werden getrocknet, um den Feuchtigkeitsgehalt zu reduzieren und eine effiziente Karbonisierung sowie hochwertige Briketts zu gewährleisten.",
+    "carbonizationTitle": "Karbonisierung",
+    "carbonizationDescription": "Die Schalen werden in Öfen unter kontrollierter Temperatur und Sauerstoffbedingungen karbonisiert, um Holzkohle mit hohem Kohlenstoffgehalt zu erzeugen.",
+    "crushingTitle": "Zerkleinern und Sieben",
+    "crushingDescription": "Die Holzkohle wird zerkleinert und gesiebt, um eine einheitliche Partikelgröße zu erreichen und die Brenneigenschaften zu optimieren.",
+    "mixingTitle": "Mischen und Binden",
+    "mixingDescription": "Die Holzkohle wird mit natürlichen Bindemitteln wie Stärke oder Ton gemischt, um die Briketts zusammenzuhalten.",
+    "moldingTitle": "Formen und Pressen",
+    "moldingDescription": "Die Mischung wird in Formen gepresst. Der Druck bestimmt die Dichte und Haltbarkeit des Briketts.",
+    "finalDryingTitle": "Endtrocknung",
+    "finalDryingDescription": "Die geformten Briketts werden erneut getrocknet, um Restfeuchtigkeit zu entfernen, und sind dann bereit für die Verpackung.",
+    "qualityControlTitle": "Qualitätskontrolle",
+    "qualityControlDescription": "Jede Charge durchläuft strenge Qualitätsprüfungen: Dichte, Aschegehalt, Feuchtigkeit und Brenndauer.",
+    "packagingTitle": "Verpackung",
+    "packagingDescription": "Die fertigen Briketts werden sorgfältig verpackt, um sie während des Transports und der Lagerung zu schützen.",
+    "storageTitle": "Lagerung",
+    "storageDescription": "Briketts sollten an einem trockenen, belüfteten Ort, fern von direkter Sonneneinstrahlung und Hitze, gelagert werden."
+  },
   "shipping": {
     "containerAlt": "Versandcontainer von Indo Charcoal Supply",
     "aboutTitle": "ÜBER DEN VERSAND",
@@ -73,6 +98,7 @@
   },
   "packaging": {
     "title": "Verpackungsoptionen",
+    "yourBrandourPackaging": "Ihre Marke, unsere Verpackung",
     "masterAlt": "Umkarton",
     "masterTitle": "UMKARTON",
     "masterDescription": "Dieser große Umkarton dient dazu, Ihre Holzkohlebriketts während des Transports und der Lagerung zu fassen und zu schützen.",
@@ -87,13 +113,14 @@
     "innerAvailable": "Erhältliche Größen:",
     "innerSize1to2": "1 - 2 kg",
     "innerSize250to500": "250 - 500 g",
+    "customPackagingTitle": "Benötigen Sie individuelle Verpackungen?",
     "customizationText": "Unsere Umkartons können individuell mit Ihrem Logo und Branding gestaltet werden.",
     "customizationContact": "Kontaktieren Sie uns",
     "customizationSuffix": ", um Ihre individuellen Designwünsche zu besprechen."
   },
   "testimonialsSection": {
     "sectionId": "testimonialsSection",
-    "title": "What Our Clients Say",
+    "title": "Was unsere Kunden sagen",
     "testimonialList": [
       {
         "quote": "The quality of the charcoal is outstanding. Consistent heat and long burning time. Our customers are very satisfied.",
