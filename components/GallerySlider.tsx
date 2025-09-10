@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 const images = [
   '/gallery/gallery1.webp',

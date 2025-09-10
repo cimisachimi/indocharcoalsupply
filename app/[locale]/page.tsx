@@ -16,8 +16,6 @@ const OurTeam = dynamic(() => import('@/components/OurTeam'));
 const Footer = dynamic(() => import('@/components/Footer'));
 const LocationMap = dynamic(() => import('@/components/LocationMap'));
 
-import { useTranslations } from 'next-intl';
-
 export default function HomePage() {
   return (
     <main>
