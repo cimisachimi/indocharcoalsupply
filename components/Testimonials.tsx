@@ -2,6 +2,57 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// --- Data Testimoni ---
+const testimonialsData = [
+  {
+    quote: 'Our first shipment of briquettes from Indo Charcoal Supply was a massive success. The quality is consistently high, and the packaging held up perfectly during the long transit. Their team is extremely professional and made the entire export process feel effortless. We are very satisfied!',
+    author: 'Michael Chen',
+    location: 'Global Import Co., Ltd., China',
+  },
+  {
+    quote: 'We were looking for a reliable charcoal supplier for our restaurants, and Indo Charcoal Supply exceeded our expectations. The briquettes burn hot and long, which is crucial for our business. The communication and logistics support they provided were top-notch. Highly recommended for international buyers.',
+    author: 'Sarah Kim',
+    location: 'Seoul BBQ Group, South Korea',
+  },
+  {
+    quote: 'Navigating international trade can be complex, but working with Indo Charcoal Supply was a breeze. They handled all the documentation and ensured our order arrived on time. The quality of their coconut charcoal is simply unmatched. Our clients are thrilled with the product. A fantastic business partner.',
+    author: 'David Rodriguez',
+    location: 'Exportaciones Fénix, Spain',
+  },
+  {
+    quote: 'We have been in the charcoal business for decades, and we can confidently say that the quality of Indo Charcoal Supply’s briquettes is among the best we have ever sourced. Their production capacity and efficiency in fulfilling large orders is truly impressive. We look forward to a long-term partnership.',
+    author: 'Ahmed Al-Farsi',
+    location: 'Desert Trade LLC, United Arab Emirates',
+  },
+  {
+    quote: 'Finding sustainable and high-quality briquettes is a top priority for us. Indo Charcoal Supply meets both criteria perfectly. The product is environmentally friendly and the performance is excellent. Their commitment to customer service is what truly sets them apart. A reliable and trustworthy partner for our growing market.',
+    author: 'Emily Johnson',
+    location: 'Eco Fuels Corp., USA',
+  },
+  {
+    quote: 'Working with Indo Charcoal Supply has streamlined our supply chain significantly. Their attention to detail, from product quality to secure shipping, is exceptional. The briquettes have been a big hit with our wholesale clients. It is a pleasure doing business with such a professional and dedicated team.',
+    author: 'Omar Hassan',
+    location: 'Oasis Trading, Egypt',
+  },
+  {
+    quote: 'The quality of the charcoal briquettes we received from Indo Charcoal Supply is fantastic. They burn for a long time without much ash, which is exactly what our customers need. The team was very supportive throughout the entire export process. We are excited about our future orders.',
+    author: 'Isabella Rossi',
+    location: 'Carboni del Mondo, Italy',
+  },
+  {
+    quote: 'Reliability is key in our business, and Indo Charcoal Supply has proven to be a reliable partner. Their briquettes meet all our quality standards, and they have been very efficient with their shipments. The consistent product quality has helped us build trust with our customers.',
+    author: 'Ryu Tanaka',
+    location: 'Nippon Grills, Japan',
+  },
+];
 
 const StarIcon = () => (
   <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -16,7 +67,7 @@ type TestimonialCardProps = {
 };
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, location }) => (
-  <div className="bg-white p-8 rounded-lg shadow-md flex flex-col h-full text-left">
+  <div className="bg-white/90 p-8 rounded-lg shadow-md flex flex-col h-full text-left border border-gray-200">
     <div className="flex mb-4">
       {[...Array(5)].map((_, index) => (
         <StarIcon key={index} />
@@ -33,19 +84,51 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, locati
 const Testimonials: React.FC = () => {
   const t = useTranslations('testimonialsSection');
 
-  const testimonials = t.raw('testimonialList') as TestimonialCardProps[];
-
   return (
-    <section id={t('sectionId')} className="bg-gray-50 py-24 sm:py-32">
-      <div className="container mx-auto px-6 text-center">
+    <section
+      id={t('sectionId')}
+      className="relative bg-cover bg-center bg-no-repeat py-24 sm:py-32"
+      style={{ backgroundImage: "url('/prod-cover.webp')" }}
+    >
+      {/* Overlay putih transparan */}
+      <div className="absolute inset-0 bg-white/60"></div>
+
+      {/* Konten */}
+      <div className="relative container mx-auto px-6 text-center">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-12">
           {t('title')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
+        
+        {/* Swiper Carousel */}
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          centeredSlides={true}
+          loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          navigation
+          pagination={{ clickable: true }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+          }}
+        >
+          {testimonialsData.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <TestimonialCard {...testimonial} />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
