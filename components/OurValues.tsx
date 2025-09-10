@@ -64,7 +64,7 @@ const OurValues: React.FC = () => {
 
       <div className="relative container mx-auto px-6 text-center">
         <h2 className="text-3xl font-extrabold text-white sm:text-4xl mb-12">
-          Values
+          t('')
         </h2>
         {/* Changed to 2 columns on small screens to avoid a long list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

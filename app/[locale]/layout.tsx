@@ -2,6 +2,7 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 //DEFAUL CONFIGURATION
 import type { Metadata } from "next";
