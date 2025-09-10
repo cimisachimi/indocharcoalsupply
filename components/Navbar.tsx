@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Logo from './ui/Logo';
 import NavLink from './ui/Navlink';
 import { usePathname, useRouter } from 'next/navigation';
@@ -9,24 +9,35 @@ import ReactCountryFlag from 'react-country-flag';
 import { useTranslations } from 'next-intl';
 
 const Navbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isLangOpen, setIsLangOpen] = React.useState(false);
-  const langRef = React.useRef<HTMLDivElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const langRef = useRef<HTMLDivElement>(null);
 
   const pathname = usePathname();
   const router = useRouter();
 
-  const t = useTranslations('navbar'); // 👈 namespace for navbar
+  const t = useTranslations('navbar');
 
-  const navLinks = [
-    { href: '#home', label: t('home') },
-    { href: '#our-values', label: t('ourValues') },
-    { href: '#product', label: t('product') },
-    { href: '#packaging', label: t('packaging') },
-    { href: '#shipping', label: t('shipping') },
-    { href: '#our-team', label: t('ourTeam') },
-    { href: '#contact', label: t('contact') },
-  ];
+  const navLinks = useMemo(() => [
+    { href: '#home', label: t('home'), id: 'home' },
+    { href: '#our-values', label: t('ourValues'), id: 'our-values' },
+    { href: '#product', label: t('product'), id: 'product' },
+    { href: '#packaging', label: t('packaging'), id: 'packaging' },
+    { href: '#shipping', label: t('shipping'), id: 'shipping' },
+    { href: '#our-team', label: t('ourTeam'), id: 'our-team' },
+    { href: '#contact', label: t('contact'), id: 'contact' },
+  ], [t]);
+
+  const localeNames: Record<string, string> = {
+    en: 'English',
+    de: 'Deutsch',
+    ar: 'العربية',
+    nl: 'Nederlands',
+    zh: '中文',
+    fr: 'Français',
+    ja: '日本語',
+  };
 
   const localeFlags: Record<string, string> = {
     en: 'US', de: 'DE', ar: 'SA', nl: 'NL', zh: 'CN', fr: 'FR', ja: 'JP',
@@ -44,7 +55,7 @@ const Navbar: React.FC = () => {
     setIsLangOpen(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onClickOutside = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
         setIsLangOpen(false);
@@ -53,6 +64,34 @@ const Navbar: React.FC = () => {
     document.addEventListener('mousedown', onClickOutside);
     return () => document.removeEventListener('mousedown', onClickOutside);
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-40% 0px -60% 0px',
+        threshold: 0,
+      }
+    );
+
+    navLinks.forEach(link => {
+      const section = document.querySelector(link.href);
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.href);
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, [navLinks]);
 
   const LanguageSwitcher = () => (
     <div className="relative z-[60]" ref={langRef}>
@@ -68,7 +107,7 @@ const Navbar: React.FC = () => {
           style={{ width: '1.1em', height: '1.1em' }}
           aria-label={currentLocale}
         />
-        <span className="uppercase">{currentLocale}</span>
+        <span>{localeNames[currentLocale]}</span>
         <svg
           className={`ml-1 h-4 w-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`}
           fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
@@ -94,7 +133,7 @@ const Navbar: React.FC = () => {
                 style={{ width: '1.1em', height: '1.1em' }}
                 aria-label={loc}
               />
-              <span className="uppercase">{loc}</span>
+              <span>{localeNames[loc]}</span>
             </button>
           ))}
         </div>
@@ -105,7 +144,7 @@ const Navbar: React.FC = () => {
   return (
     <header
       className="fixed top-0 left-0 w-full z-50 h-16 lg:h-20 bg-zinc-900/90 backdrop-blur-md shadow-lg
-                 transition-colors duration-300 ease-in-out
+                 transition-all duration-300 ease-in-out
                  rounded-b-[28px] md:rounded-b-[40px] lg:rounded-b-[48px]
                  overflow-visible"
     >
@@ -114,9 +153,14 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex z-[55]">
-          <ul className="flex items-center space-x-10 text-base font-medium">
+          <ul className="flex items-center space-x-10 text-base">
             {navLinks.map((link) => (
-              <NavLink key={link.href} href={link.href}>
+              <NavLink
+                key={link.href}
+                href={link.href}
+                isActive={link.id === activeSection}
+                onClick={() => { }}
+              >
                 {link.label}
               </NavLink>
             ))}
@@ -152,9 +196,14 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <nav className="lg:hidden bg-zinc-900/95 pb-4 mt-2 shadow-lg rounded-b-2xl z-[55]">
-          <ul className="flex flex-col items-center space-y-4">
+          <ul className="flex flex-col items-center space-y-4 pt-4">
             {navLinks.map((link) => (
-              <NavLink key={link.href} href={link.href}>
+              <NavLink
+                key={link.href}
+                href={link.href}
+                isActive={link.id === activeSection}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {link.label}
               </NavLink>
             ))}

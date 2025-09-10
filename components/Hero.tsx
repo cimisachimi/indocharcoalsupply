@@ -37,9 +37,12 @@ const Hero: React.FC = () => {
             >
               {t('catalog')}
             </a>
-            <button className="border border-white/50 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
+            <a
+              href="#contact"
+              className="border border-white/50 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-300"
+            >
               {t('contact')}
-            </button>
+            </a>
           </div>
         </div>
       </div>
