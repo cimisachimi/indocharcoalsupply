@@ -7,7 +7,7 @@ const ContactBubble: React.FC = () => {
 
   // --- Using the updated contact details ---
   const whatsappNumber = "6289687199099";
-  const emailAddress = "briquettesupplier@gmail.com";
+  const emailAddress = "info@indocharcoalsupply.com";
   const whatsappMessage = "Hello, I'm interested in your charcoal products for consultation or purchase.";
 
   return (

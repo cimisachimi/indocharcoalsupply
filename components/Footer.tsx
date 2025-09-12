@@ -68,7 +68,9 @@ const Footer: React.FC = () => {
               <li className="flex items-center justify-center md:justify-start gap-3">
                 <IconPhone />
                 <a
-                  href="tel:+6289687199099"
+                  href="https://wa.me/6289687199099"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white"
                 >
                   +62 896-8719-9099
