@@ -4,26 +4,57 @@ import StatItem from './ui/StatItem';
 import { useTranslations } from 'next-intl'
 
 const StatsBar: React.FC = () => {
-  const t = useTranslations('stat')
-  return (
-    // This is now the main component element.
-    // It's positioned absolutely to the Hero container.
-    // '-bottom-12' makes it hang, and 'left-1/2 -translate-x-1/2' centers it.
-    <div className="
+  
+ const t = useTranslations('stat');
+
+return (
+  <div
+    className="
       absolute -bottom-12 left-1/2 -translate-x-1/2
       flex justify-around items-center
-      bg-brand-orange text-white shadow-lg
+      bg-brand-orange text-white shadow-xl
       rounded-[50px]
       w-11/12 max-w-3xl
-      gap-4    px-6  py-4
-      sm:gap-8 sm:px-10 sm:py-5
-      lg:gap-16 lg:px-16 lg:py-8
-    ">
-      <StatItem value="15+" label={t('product')} />
-      <StatItem value="20+" label={t('client')} />
-      <StatItem value="15+" label={t('testimonie')} />
+      px-6 py-6
+      sm:px-10 sm:py-8
+      lg:px-16 lg:py-10
+    "
+  >
+    {/* Country */}
+    <div className="flex flex-col items-center text-center">
+      <span className="text-4xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
+        10+
+      </span>
+      <span className="text-sm sm:text-base mt-1 font-medium tracking-wide opacity-90">
+        {t('country')}
+      </span>
     </div>
-  );
+
+    {/* Client */}
+    <div className="flex flex-col items-center text-center">
+      <span className="text-4xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
+        20+
+      </span>
+      <span className="text-sm sm:text-base mt-1 font-medium tracking-wide opacity-90">
+        {t('client')}
+      </span>
+    </div>
+
+    {/* Testimonie */}
+    <div className="flex flex-col items-center text-center">
+      <span className="text-4xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
+        25+
+      </span>
+      <span className="text-sm sm:text-base mt-1 font-medium tracking-wide opacity-90">
+        {t('testimonie')}
+      </span>
+    </div>
+  </div>
+);
+
+
+
+
 };
 
 export default StatsBar;
