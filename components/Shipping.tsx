@@ -1,65 +1,36 @@
-import React from 'react';
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+"use client";
 
-// --- Reusable Info Card ---
-const InfoCard = ({
-  icon,
-  title,
-  children,
-}: {
-  icon: React.ReactNode;
+import React, { ReactNode, ReactElement } from "react";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+
+/* --- Types --- */
+interface InfoCardProps {
+  icon: ReactElement;
   title: string;
-  children: React.ReactNode;
-}) => (
+  children: ReactNode;
+}
+
+interface ShippingContainerImageProps {
+  alt: string;
+}
+
+/* --- Reusable Components --- */
+const InfoCard: React.FC<InfoCardProps> = ({ icon, title, children }) => (
   <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl">
     <div className="flex items-center gap-4 mb-4">
       <div className="flex-shrink-0 grid h-12 w-12 place-content-center rounded-full bg-brand-orange/10 text-brand-orange">
         {icon}
       </div>
-      <h3 className="text-xl font-extrabold text-gray-900 tracking-tight">{title}</h3>
+      <h3 className="text-xl font-extrabold text-gray-900 tracking-tight">
+        {title}
+      </h3>
     </div>
     <div className="text-gray-600 space-y-4 leading-relaxed">{children}</div>
   </div>
 );
 
-// --- Main Shipping Component ---
-const Shipping: React.FC = () => {
-  const t = useTranslations('shipping');
-
-  return (
-    <section id="shipping" className="bg-gray-50 py-24 sm:py-32">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Column 1: Image - Disesuaikan agar lebih seimbang dengan dua card */}
-          <div className="relative w-full aspect-square mx-auto max-w-lg lg:max-w-none transform transition-transform duration-300 hover:scale-[1.02]">
-            <Image
-              src="/idi.webp"
-              alt={t('containerAlt')}
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-3xl shadow-xl"
-            />
-          </div>
-
-          {/* Column 2: Info Cards */}
-          <div className="flex flex-col gap-8">
-            <InfoCard icon={<IconShipping />} title={t('aboutTitle')}>
-              <p>{t('aboutParagraph1')}</p>
-              <p>{t('aboutParagraph2')}</p>
-            </InfoCard>
-
-            <InfoCard icon={<IconGuide />} title={t('guideTitle')}>
-              <p>{t('guideParagraph')}</p>
-            </InfoCard>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// --- Icons ---
+/* --- Icons --- */
 const IconShipping = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -99,5 +70,47 @@ const IconGuide = () => (
     />
   </svg>
 );
+
+const ShippingContainerImage: React.FC<ShippingContainerImageProps> = ({ alt }) => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div className="relative w-full h-full rounded-3xl shadow-xl overflow-hidden">
+      <Image
+        src="/kontainer.png"
+        alt={alt}
+        fill
+        className="object-contain p-6"
+        priority
+      />
+    </div>
+  </div>
+);
+
+/* --- Main Section --- */
+const Shipping = () => {
+  const t = useTranslations("shipping");
+
+  return (
+    <section id="shipping" className="bg-gray-50 py-24 sm:py-32">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Column 1: Gambar */}
+          <ShippingContainerImage alt={t("containerAlt")} />
+
+          {/* Column 2: Info Cards */}
+          <div className="flex flex-col gap-8">
+            <InfoCard icon={<IconShipping />} title={t("aboutTitle")}>
+              <p>{t("aboutParagraph1")}</p>
+              <p>{t("aboutParagraph2")}</p>
+            </InfoCard>
+
+            <InfoCard icon={<IconGuide />} title={t("guideTitle")}>
+              <p>{t("guideParagraph")}</p>
+            </InfoCard>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Shipping;
