@@ -1,31 +1,37 @@
 import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+
 const TeamMemberCard = ({ imageSrc, name, role }: { imageSrc: string, name: string, role: string }) => (
   <div className="text-center">
     <div className="relative h-48 w-48 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 shadow-lg">
-      {/* TODO: Add your team member images to the `public/team/` folder 
-              (e.g., /public/team/member-1.webp)
-            */}
-      <Image src={imageSrc} alt={`Photo of ${name}`} fill style={{ objectFit: 'cover' }} />
+      <Image
+        src={imageSrc}
+        alt={`Photo of ${name}`}
+        fill
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'top', // Memastikan gambar terfokus di bagian atas
+        }}
+      />
     </div>
-    <h3 className="text-xl font-bold text-gray-900">{name}</h3>
-    <p className="text-brand-orange font-semibold">{role}</p>
+    <h3 className="text-xl font-bold text-gray-900 text-center">{name.trim()}</h3>
+    <p className="text-brand-orange font-semibold text-center">{role.trim()}</p>
   </div>
 );
 
 const OurTeam: React.FC = () => {
-  const t = useTranslations('team'); // 👈 Namespace "team"
+  const t = useTranslations('team');
 
   const teamMembers = [
     {
       imageSrc: "/team-image/member1.webp",
-      name: "ADAM BILLAH HADI WARDOYO ",
+      name: "ADAM BILLAH HADI WARDOYO",
       role: "Chief Executive Officer"
     },
     {
       imageSrc: "/team-image/member2.webp",
-      name: "AZIZAH NAYANDA FADHILAH ",
+      name: "AZIZAH NAYANDA FADHILAH",
       role: "Chief Financial Officer"
     },
     {
