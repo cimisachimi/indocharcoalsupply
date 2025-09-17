@@ -9,9 +9,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "catalog": "Catalogus Downloaden",
+     "catalog": "Catalogus Downloaden",
     "contact": "Neem Contact Op",
-    "paragraph": "Het bedrijf Indo Charcoal Supply is opgericht in 2021 met een sterke toewijding om klanten de beste, snelste en meest betrouwbare diensten te bieden. Sinds de oprichting heeft het bedrijf zich gericht op de productie en export van hoogwaardige briketten."
+    "paragraph": "Het bedrijf Indo Charcoal Supply is opgericht in 2021 met een sterke toewijding om klanten de beste, snelste en meest betrouwbare diensten te bieden. Sinds de oprichting heeft het bedrijf zich gericht op de productie en export van hoogwaardige briketten.",
+    "company-profile": "Bedrijfsprofiel Downloaden",
+    "download-options": "Downloadopties"
   },
   "stat": {
     "country": "Land",

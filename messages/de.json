@@ -9,9 +9,11 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "catalog": "Katalog herunterladen",
+     "catalog": "Katalog herunterladen",
     "contact": "Kontaktieren Sie uns",
-    "paragraph": "Das Unternehmen Indo Charcoal Supply wurde 2021 mit dem festen Vorsatz gegründet, Kunden die besten, schnellsten und zuverlässigsten Dienstleistungen zu bieten. Seit seiner Gründung konzentriert sich das Unternehmen auf die Produktion und den Export von hochwertigen Briketts."
+    "paragraph": "Das Unternehmen Indo Charcoal Supply wurde 2021 mit dem festen Vorsatz gegründet, Kunden die besten, schnellsten und zuverlässigsten Dienstleistungen zu bieten. Seit seiner Gründung konzentriert sich das Unternehmen auf die Produktion und den Export von hochwertigen Briketts.",
+    "company-profile": "Firmenprofil herunterladen",
+    "download-options": "Download-Optionen"
   },
   "stat": {
     "country": "Land",

@@ -9,9 +9,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "catalog": "Télécharger le Catalogue",
+     "catalog": "Télécharger le Catalogue",
     "contact": "Nous Contacter",
-    "paragraph": "La société Indo Charcoal Supply a été fondée en 2021 avec un engagement fort à fournir à ses clients les services les meilleurs, les plus rapides et les plus fiables. Depuis sa création, l'entreprise se concentre sur la production et l'exportation de briquettes de haute qualité."
+    "paragraph": "La société Indo Charcoal Supply a été fondée en 2021 avec un engagement fort à fournir à ses clients les services les meilleurs, les plus rapides et les plus fiables. Depuis sa création, l'entreprise se concentre sur la production et l'exportation de briquettes de haute qualité.",
+    "company-profile": "Télécharger le profil de l'entreprise",
+    "download-options": "Options de téléchargement"
   },
   "stat": {
     "country": "Pays",
