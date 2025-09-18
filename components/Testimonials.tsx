@@ -14,13 +14,13 @@ import 'swiper/css/pagination';
 const testimonialsData = [
   {
     quote: 'Our first shipment of briquettes from Indo Charcoal Supply was a massive success. The quality is consistently high, and the packaging held up perfectly during the long transit. Their team is extremely professional and made the entire export process feel effortless. We are very satisfied!',
-    author: 'Michael Chen',
-    location: 'Global Import Co., Ltd., China',
+    author: 'Noah Thompson',
+    location: 'TerraHeat Australia, Australia',
   },
   {
     quote: 'We were looking for a reliable charcoal supplier for our restaurants, and Indo Charcoal Supply exceeded our expectations. The briquettes burn hot and long, which is crucial for our business. The communication and logistics support they provided were top-notch. Highly recommended for international buyers.',
-    author: 'Sarah Kim',
-    location: 'Seoul BBQ Group, South Korea',
+    author: 'Sophie Bakker',
+    location: 'EcoStroom Trading, Netherland',
   },
   {
     quote: 'Navigating international trade can be complex, but working with Indo Charcoal Supply was a breeze. They handled all the documentation and ensured our order arrived on time. The quality of their coconut charcoal is simply unmatched. Our clients are thrilled with the product. A fantastic business partner.',
@@ -34,8 +34,8 @@ const testimonialsData = [
   },
   {
     quote: 'Finding sustainable and high-quality briquettes is a top priority for us. Indo Charcoal Supply meets both criteria perfectly. The product is environmentally friendly and the performance is excellent. Their commitment to customer service is what truly sets them apart. A reliable and trustworthy partner for our growing market.',
-    author: 'Emily Johnson',
-    location: 'Eco Fuels Corp., USA',
+    author: 'Sophie De Vries',
+    location: 'CharBrique Belgium SA, Belgium',
   },
   {
     quote: 'Working with Indo Charcoal Supply has streamlined our supply chain significantly. Their attention to detail, from product quality to secure shipping, is exceptional. The briquettes have been a big hit with our wholesale clients. It is a pleasure doing business with such a professional and dedicated team.',
@@ -49,8 +49,8 @@ const testimonialsData = [
   },
   {
     quote: 'Reliability is key in our business, and Indo Charcoal Supply has proven to be a reliable partner. Their briquettes meet all our quality standards, and they have been very efficient with their shipments. The consistent product quality has helped us build trust with our customers.',
-    author: 'Ryu Tanaka',
-    location: 'Nippon Grills, Japan',
+    author: 'Oliver Thompson',
+    location: 'Kiwi Green Energy Ltd, New Zealand',
   },
 ];
 
