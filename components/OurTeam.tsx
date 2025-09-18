@@ -2,16 +2,26 @@ import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-const TeamMemberCard = ({ imageSrc, name, role }: { imageSrc: string, name: string, role: string }) => (
+// Menambahkan prop objectPositionCustom agar bisa diatur per orang
+interface TeamMemberCardProps {
+  imageSrc: string;
+  name: string;
+  role: string;
+  objectPositionCustom?: string;
+}
+
+const TeamMemberCard = ({ imageSrc, name, role, objectPositionCustom }: TeamMemberCardProps) => (
   <div className="text-center">
     <div className="relative h-48 w-48 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 shadow-lg">
       <Image
         src={imageSrc}
         alt={`Photo of ${name}`}
         fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         style={{
           objectFit: 'cover',
-          objectPosition: 'top', // Memastikan gambar terfokus di bagian atas
+          // Setiap foto sekarang memiliki posisi uniknya sendiri
+          objectPosition: objectPositionCustom || 'center center',
         }}
       />
     </div>
@@ -27,17 +37,23 @@ const OurTeam: React.FC = () => {
     {
       imageSrc: "/team-image/member1.webp",
       name: "ADAM BILLAH HADI WARDOYO",
-      role: "Chief Executive Officer"
+      role: "Chief Executive Officer",
+      // Adam: Sedikit diturunkan agar seimbang
+      objectPositionCustom: 'center 35%' 
     },
     {
       imageSrc: "/team-image/member2.webp",
       name: "AZIZAH NAYANDA FADHILAH",
-      role: "Chief Financial Officer"
+      role: "Chief Financial Officer",
+      // Dinaikkan lagi
+      objectPositionCustom: 'center 2%' 
     },
     {
       imageSrc: "/team-image/member3.webp",
       name: "WASESA BERLIANTO",
-      role: "Chief Marketing Officer"
+      role: "Chief Marketing Officer",
+      // Dinaikkan lagi
+      objectPositionCustom: 'center 5%'
     }
   ];
 

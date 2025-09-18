@@ -71,7 +71,8 @@ const Hero: React.FC = () => {
               
               {showOptions && (
                 <div
-                  className="origin-top-center absolute left-1/2 mt-2 w-60 -translate-x-1/2 rounded-lg shadow-xl bg-black/80 ring-1 ring-white/20 focus:outline-none z-10 animate-fade-in"
+                  // --- PERUBAHAN DI SINI ---
+                  className="origin-bottom-center absolute bottom-full left-1/2 mb-2 w-60 -translate-x-1/2 rounded-lg shadow-xl bg-black/80 ring-1 ring-white/20 focus:outline-none z-10 animate-fade-in"
                   role="menu"
                   aria-orientation="vertical"
                   tabIndex={-1}

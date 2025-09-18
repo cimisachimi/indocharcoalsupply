@@ -66,19 +66,20 @@ const IconGuide = () => (
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 1 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
     />
   </svg>
 );
 
 const ShippingContainerImage: React.FC<ShippingContainerImageProps> = ({ alt }) => (
-  <div className="w-full h-full flex items-center justify-center">
-    <div className="relative w-full h-full rounded-3xl shadow-xl overflow-hidden">
+  <div className="w-full flex items-center justify-center">
+    {/* Mengubah rasio aspek atau memberikan tinggi tetap yang lebih besar */}
+    <div className="relative w-full h-[300px] md:h-[450px] lg:h-[600px] rounded-3xl overflow-hidden ">
       <Image
         src="/kontainer.png"
         alt={alt}
         fill
-        className="object-contain p-6"
+        className="object-contain"
         priority
       />
     </div>

@@ -60,7 +60,7 @@ const GallerySlider: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-900 w-full py-24 sm:py-32">
+    <section className="bg-zinc-800 w-full py-24 sm:py-32">
       {/* Re-added container and max-width for a balanced size */}
       <div className="container mx-auto max-w-7xl px-4">
         <h2 className="text-3xl font-extrabold text-brand-orange sm:text-4xl lg:text-5xl text-center mb-12">

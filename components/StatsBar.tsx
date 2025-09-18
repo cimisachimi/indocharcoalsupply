@@ -23,7 +23,7 @@ return (
     {/* Country */}
     <div className="flex flex-col items-center text-center">
       <span className="text-4xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
-        10+
+        6+
       </span>
       <span className="text-sm sm:text-base mt-1 font-medium tracking-wide opacity-90">
         {t('country')}
@@ -33,7 +33,7 @@ return (
     {/* Client */}
     <div className="flex flex-col items-center text-center">
       <span className="text-4xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
-        20+
+        15+
       </span>
       <span className="text-sm sm:text-base mt-1 font-medium tracking-wide opacity-90">
         {t('client')}
@@ -43,7 +43,7 @@ return (
     {/* Testimonie */}
     <div className="flex flex-col items-center text-center">
       <span className="text-4xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
-        25+
+        15+
       </span>
       <span className="text-sm sm:text-base mt-1 font-medium tracking-wide opacity-90">
         {t('testimonie')}
