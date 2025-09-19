@@ -17,7 +17,12 @@ interface ShippingContainerImageProps {
 
 /* --- Reusable Components --- */
 const InfoCard: React.FC<InfoCardProps> = ({ icon, title, children }) => (
-  <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl">
+  // Tambahkan animasi fade-up pada kartu
+  <div
+    data-aos="fade-up"
+    data-aos-once="true"
+    className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl"
+  >
     <div className="flex items-center gap-4 mb-4">
       <div className="flex-shrink-0 grid h-12 w-12 place-content-center rounded-full bg-brand-orange/10 text-brand-orange">
         {icon}
@@ -72,9 +77,13 @@ const IconGuide = () => (
 );
 
 const ShippingContainerImage: React.FC<ShippingContainerImageProps> = ({ alt }) => (
-  <div className="w-full flex items-center justify-center">
-    {/* Mengubah rasio aspek atau memberikan tinggi tetap yang lebih besar */}
-    <div className="relative w-full h-[300px] md:h-[450px] lg:h-[600px] rounded-3xl overflow-hidden ">
+  // Tambahkan animasi fade-right pada gambar
+  <div
+    data-aos="fade-right"
+    data-aos-once="true"
+    className="w-full flex items-center justify-center"
+  >
+    <div className="relative w-full h-[300px] md:h-[450px] lg:h-[600px] rounded-3xl overflow-hidden">
       <Image
         src="/kontainer.png"
         alt={alt}
@@ -99,6 +108,7 @@ const Shipping = () => {
 
           {/* Column 2: Info Cards */}
           <div className="flex flex-col gap-8">
+            {/* Setiap InfoCard akan memiliki animasi fade-up */}
             <InfoCard icon={<IconShipping />} title={t("aboutTitle")}>
               <p>{t("aboutParagraph1")}</p>
               <p>{t("aboutParagraph2")}</p>

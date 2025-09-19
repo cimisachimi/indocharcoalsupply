@@ -1,10 +1,16 @@
+"use client";
+
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 // Import 'dynamic' from Next.js
 import dynamic from 'next/dynamic';
 
 // Dynamically import components that are below the fold
-const VisionMission = dynamic(() => import('@/components/VisionMission'));
+const VisionMission = dynamic(() => import('@/components/VisionMission') as any);
 const OurValues = dynamic(() => import('@/components/OurValues'));
 const Products = dynamic(() => import('@/components/Product'));
 const ProductionProcess = dynamic(() => import('@/components/ProdProcess'));
@@ -17,6 +23,15 @@ const Footer = dynamic(() => import('@/components/Footer'));
 const LocationMap = dynamic(() => import('@/components/LocationMap'));
 
 export default function HomePage() {
+  // Inisialisasi AOS saat komponen dimuat di sisi klien
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: true,
+      offset: 100, // Mulai animasi 100px sebelum elemen terlihat
+    });
+  }, []);
+
   return (
     <main>
       <Navbar />
