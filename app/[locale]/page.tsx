@@ -10,7 +10,8 @@ import Hero from "@/components/Hero";
 import dynamic from 'next/dynamic';
 
 // Dynamically import components that are below the fold
-const VisionMission = dynamic(() => import('@/components/VisionMission') as any);
+const VisionMission = dynamic(() => import('@/components/VisionMission'));
+
 const OurValues = dynamic(() => import('@/components/OurValues'));
 const Products = dynamic(() => import('@/components/Product'));
 const ProductionProcess = dynamic(() => import('@/components/ProdProcess'));
